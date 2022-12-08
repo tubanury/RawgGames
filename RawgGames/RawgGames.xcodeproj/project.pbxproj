@@ -25,6 +25,9 @@
 		952F640E293FCFCF008B0FD7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 952F640D293FCFCF008B0FD7 /* Alamofire */; };
 		952F6410293FD095008B0FD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F640F293FD095008B0FD7 /* Constants.swift */; };
 		952F6413293FD5C5008B0FD7 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 952F6412293FD5C5008B0FD7 /* AlamofireImage */; };
+		952F64192941E80F008B0FD7 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F64182941E80F008B0FD7 /* GameDetailViewController.swift */; };
+		952F641B2941E866008B0FD7 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F641A2941E866008B0FD7 /* GameDetailViewModel.swift */; };
+		952F641D2941E877008B0FD7 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F641C2941E877008B0FD7 /* GameDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		952F6408293FBE66008B0FD7 /* GameListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewModel.swift; sourceTree = "<group>"; };
 		952F640A293FCECD008B0FD7 /* GameClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClient.swift; sourceTree = "<group>"; };
 		952F640F293FD095008B0FD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		952F64182941E80F008B0FD7 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		952F641A2941E866008B0FD7 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
+		952F641C2941E877008B0FD7 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,9 @@
 		952F63FC293F903F008B0FD7 /* GameDetail */ = {
 			isa = PBXGroup;
 			children = (
+				952F64142941E74D008B0FD7 /* Controller */,
+				952F64152941E752008B0FD7 /* ViewModel */,
+				952F64172941E75F008B0FD7 /* Model */,
 			);
 			path = GameDetail;
 			sourceTree = "<group>";
@@ -222,6 +231,30 @@
 				952F63CA293F8F9E008B0FD7 /* GameListViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		952F64142941E74D008B0FD7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				952F64182941E80F008B0FD7 /* GameDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		952F64152941E752008B0FD7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				952F641A2941E866008B0FD7 /* GameDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		952F64172941E75F008B0FD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				952F641C2941E877008B0FD7 /* GameDetailModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,13 +397,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				952F6403293F9673008B0FD7 /* GameTableViewCell.swift in Sources */,
+				952F641B2941E866008B0FD7 /* GameDetailViewModel.swift in Sources */,
 				952F63D1293F8F9E008B0FD7 /* RawgGames.xcdatamodeld in Sources */,
 				952F63CB293F8F9E008B0FD7 /* GameListViewController.swift in Sources */,
 				952F6407293FBD6F008B0FD7 /* GetGamesResponseModel.swift in Sources */,
 				952F6409293FBE66008B0FD7 /* GameListViewModel.swift in Sources */,
 				952F6410293FD095008B0FD7 /* Constants.swift in Sources */,
+				952F64192941E80F008B0FD7 /* GameDetailViewController.swift in Sources */,
 				952F63C7293F8F9E008B0FD7 /* AppDelegate.swift in Sources */,
 				952F63C9293F8F9E008B0FD7 /* SceneDelegate.swift in Sources */,
+				952F641D2941E877008B0FD7 /* GameDetailModel.swift in Sources */,
 				952F6405293F96A8008B0FD7 /* GameModel.swift in Sources */,
 				952F640B293FCECD008B0FD7 /* GameClient.swift in Sources */,
 			);
