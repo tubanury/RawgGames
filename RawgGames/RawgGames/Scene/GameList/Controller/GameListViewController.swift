@@ -22,6 +22,7 @@ class GameListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        viewModel.fetchGames()
     }
 
     
@@ -49,6 +50,7 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("")
     }
+   
    
 }
 

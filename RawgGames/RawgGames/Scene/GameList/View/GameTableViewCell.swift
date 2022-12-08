@@ -15,7 +15,13 @@ final class GameTableViewCell: UITableViewCell {
 
     func configureCell(game: GameModel){
         gameName.text = game.name
+       
+
         guard let url = URL(string: game.backgroundImage) else {return}
         gameImage.af.setImage(withURL: url)
+    }
+    
+    override func prepareForReuse() {
+        gameImage.image = nil
     }
 }

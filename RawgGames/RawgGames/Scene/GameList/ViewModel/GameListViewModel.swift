@@ -40,7 +40,7 @@ class GameListViewModel: GameListViewModelProtocol {
         games?.count ?? 0
     }
     func getGame(at index: Int) -> GameModel? {
-        games?[index]
+        return games?[index]
     }
     
 }
