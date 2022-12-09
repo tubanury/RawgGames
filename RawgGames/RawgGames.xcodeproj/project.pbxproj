@@ -28,6 +28,9 @@
 		952F64192941E80F008B0FD7 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F64182941E80F008B0FD7 /* GameDetailViewController.swift */; };
 		952F641B2941E866008B0FD7 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F641A2941E866008B0FD7 /* GameDetailViewModel.swift */; };
 		952F641D2941E877008B0FD7 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F641C2941E877008B0FD7 /* GameDetailModel.swift */; };
+		954E0B5B2943CDC700E7E454 /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B5A2943CDC700E7E454 /* NoteListTableViewCell.swift */; };
+		954E0B5D2943CDD500E7E454 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B5C2943CDD500E7E454 /* NoteListViewModel.swift */; };
+		954E0B5F2943CDE400E7E454 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B5E2943CDE400E7E454 /* NoteListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		952F64182941E80F008B0FD7 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		952F641A2941E866008B0FD7 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		952F641C2941E877008B0FD7 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
+		954E0B5A2943CDC700E7E454 /* NoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTableViewCell.swift; sourceTree = "<group>"; };
+		954E0B5C2943CDD500E7E454 /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
+		954E0B5E2943CDE400E7E454 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 		952F63FB293F903B008B0FD7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				954E0B552943C75300E7E454 /* NoteList */,
 				952F63FD293F9048008B0FD7 /* GameList */,
 				952F63FC293F903F008B0FD7 /* GameDetail */,
 			);
@@ -253,6 +260,48 @@
 			isa = PBXGroup;
 			children = (
 				952F641C2941E877008B0FD7 /* GameDetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		954E0B552943C75300E7E454 /* NoteList */ = {
+			isa = PBXGroup;
+			children = (
+				954E0B592943CD9400E7E454 /* Model */,
+				954E0B582943CD8D00E7E454 /* View */,
+				954E0B572943CD8100E7E454 /* ViewModel */,
+				954E0B562943CD7B00E7E454 /* Controller */,
+			);
+			path = NoteList;
+			sourceTree = "<group>";
+		};
+		954E0B562943CD7B00E7E454 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				954E0B5E2943CDE400E7E454 /* NoteListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		954E0B572943CD8100E7E454 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				954E0B5C2943CDD500E7E454 /* NoteListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		954E0B582943CD8D00E7E454 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				954E0B5A2943CDC700E7E454 /* NoteListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		954E0B592943CD9400E7E454 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,9 +453,12 @@
 				952F6409293FBE66008B0FD7 /* GameListViewModel.swift in Sources */,
 				952F6410293FD095008B0FD7 /* Constants.swift in Sources */,
 				952F64192941E80F008B0FD7 /* GameDetailViewController.swift in Sources */,
+				954E0B5F2943CDE400E7E454 /* NoteListViewController.swift in Sources */,
+				954E0B5D2943CDD500E7E454 /* NoteListViewModel.swift in Sources */,
 				952F63C7293F8F9E008B0FD7 /* AppDelegate.swift in Sources */,
 				952F63C9293F8F9E008B0FD7 /* SceneDelegate.swift in Sources */,
 				952F641D2941E877008B0FD7 /* GameDetailModel.swift in Sources */,
+				954E0B5B2943CDC700E7E454 /* NoteListTableViewCell.swift in Sources */,
 				952F6405293F96A8008B0FD7 /* GameModel.swift in Sources */,
 				952F640B293FCECD008B0FD7 /* GameClient.swift in Sources */,
 			);
