@@ -16,7 +16,5 @@ class NoteListTableViewCell: UITableViewCell {
         noteTitle.text = note.noteTitle
         noteText.text = note.noteText
     }
-    
-   
    
 }

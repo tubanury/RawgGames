@@ -32,5 +32,4 @@ extension GameDetailViewController: GameDetailViewModelDelegate {
         guard let url = viewModel.getGameImageURL() else {return}
         gameImageView.af.setImage(withURL: url)
     }
-    
 }

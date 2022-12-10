@@ -33,6 +33,7 @@
 		954E0B5F2943CDE400E7E454 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B5E2943CDE400E7E454 /* NoteListViewController.swift */; };
 		954E0B652943E20300E7E454 /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B642943E20300E7E454 /* AddNoteViewModel.swift */; };
 		954E0B672943E20F00E7E454 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B662943E20F00E7E454 /* AddNoteViewController.swift */; };
+		954E0B692943E9FD00E7E454 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B682943E9FD00E7E454 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		954E0B5E2943CDE400E7E454 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		954E0B642943E20300E7E454 /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		954E0B662943E20F00E7E454 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		954E0B682943E9FD00E7E454 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				952F640A293FCECD008B0FD7 /* GameClient.swift */,
+				954E0B682943E9FD00E7E454 /* CoreDataManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				952F6403293F9673008B0FD7 /* GameTableViewCell.swift in Sources */,
 				952F641B2941E866008B0FD7 /* GameDetailViewModel.swift in Sources */,
 				954E0B672943E20F00E7E454 /* AddNoteViewController.swift in Sources */,
+				954E0B692943E9FD00E7E454 /* CoreDataManager.swift in Sources */,
 				952F63D1293F8F9E008B0FD7 /* RawgGames.xcdatamodeld in Sources */,
 				952F63CB293F8F9E008B0FD7 /* GameListViewController.swift in Sources */,
 				952F6407293FBD6F008B0FD7 /* GetGamesResponseModel.swift in Sources */,

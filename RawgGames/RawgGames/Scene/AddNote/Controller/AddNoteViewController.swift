@@ -13,26 +13,33 @@ class AddNoteViewController: UIViewController {
     
     @IBOutlet weak var noteText: UITextView!
     
-    var note: Note?
     var viewModel = AddNoteViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //viewModel.delegate = self
-        if note != nil {
-            noteTitle.text = viewModel.getNoteTitle()
-            noteText.text = viewModel.getNoteText()
+        viewModel.delegate = self
+        configureView()
+    }
+    
+    @IBAction func didSaveButtonTapped(_ sender: Any) {
+        if let note = viewModel.note{
+            note.noteText = self.noteText.text
+            note.noteTitle = self.noteTitle.text
+            viewModel.delegateNoteList?.noteUpdated(note: note)
         }
         else {
-
+            viewModel.delegateNoteList?.noteAdded(title: self.noteTitle.text ?? "", text: self.noteText.text ?? "")
         }
-        
+        self.navigationController?.popToRootViewController(animated: true)
     }
-    @IBAction func didSaveButtonTapped(_ sender: Any) {
-        //todo
+    func configureView(){
+        noteTitle.text = viewModel.getNoteTitle()
+        noteText.text = viewModel.getNoteText()
     }
-   
-    
+}
+extension AddNoteViewController: AddNoteViewModelDelegate {
+    func noteInformationsLoaded() {
+    }
 }
 
 

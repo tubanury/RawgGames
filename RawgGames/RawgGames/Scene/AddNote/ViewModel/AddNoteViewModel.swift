@@ -9,21 +9,26 @@ import Foundation
 
 protocol AddNoteViewModelProtocol {
     var delegate: AddNoteViewModelDelegate? {get set}
-   
     func getNoteTitle() -> String
     func getNoteText() -> String
+    
 }
 
 protocol AddNoteViewModelDelegate: AnyObject {
-    func noteAdded()
-    //func noteUpdated()
-    //func noteDeleted()
+    func noteInformationsLoaded()
 }
 
 final class AddNoteViewModel: AddNoteViewModelProtocol {
     
     weak var delegate: AddNoteViewModelDelegate?
-    private var note: Note?
+    weak var delegateNoteList: NoteListViewModelDelegate?
+    
+    var note: Note?
+    
+    /*func setNote(note: Note){
+        self.note = note
+        self.delegate?.noteInformationsLoaded()
+    }*/
     
     func getNoteTitle() -> String {
         note?.noteTitle ?? ""

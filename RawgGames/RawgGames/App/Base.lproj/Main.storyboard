@@ -178,7 +178,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Q2t-qu-k09" detailTextLabel="pzH-02-xhI" style="IBUITableViewCellStyleSubtitle" id="1HL-dB-QtT" customClass="NoteListTableViewCell" customModule="RawgGames" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" textLabel="Q2t-qu-k09" detailTextLabel="pzH-02-xhI" style="IBUITableViewCellStyleSubtitle" id="1HL-dB-QtT" customClass="NoteListTableViewCell" customModule="RawgGames" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="54.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1HL-dB-QtT" id="B79-hD-iWp">
@@ -226,6 +226,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noteListTableView" destination="p1n-M2-y4Q" id="DAx-Ud-vat"/>
                         <segue destination="Rlh-BG-mva" kind="show" identifier="toAddEdit" id="DJa-A3-9hU"/>
                     </connections>
                 </viewController>

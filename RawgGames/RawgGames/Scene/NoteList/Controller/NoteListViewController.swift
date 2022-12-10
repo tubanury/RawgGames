@@ -21,26 +21,36 @@ class NoteListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.getNotes()
     }
-    
+   
     @IBAction func addBarButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "toAddEdit", sender: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "toAddEdit" {
             let destination = segue.destination as! AddNoteViewController
-            destination.viewModel.delegate = self
-            if sender != nil {
-                destination.note = sender as? Note
-            }
+
+            destination.viewModel.delegateNoteList = self
+            guard let sender else {return}
+            destination.viewModel.note = sender as? Note
+        
         }
     }
 
 }
 
-extension NoteListViewController: AddNoteViewModelDelegate {
-    func noteAdded() {
-        //todo
+extension NoteListViewController: NoteListViewModelDelegate {
+    func notesChanged() {
+        noteListTableView.reloadData()
+    }
+    func noteAdded(title: String, text: String) {
+        viewModel.appendNote(title: title, text: text)
+    }
+    func noteUpdated(note: Note) {
+        viewModel.updateNote(note: note)
     }
 }
 
@@ -54,6 +64,12 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
               let note = viewModel.getNote(at: indexPath.row) else {return UITableViewCell()}
         cell.configureCell(note: note)
         return cell
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteNote(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
