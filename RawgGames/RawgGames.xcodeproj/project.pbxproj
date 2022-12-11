@@ -34,6 +34,8 @@
 		954E0B652943E20300E7E454 /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B642943E20300E7E454 /* AddNoteViewModel.swift */; };
 		954E0B672943E20F00E7E454 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B662943E20F00E7E454 /* AddNoteViewController.swift */; };
 		954E0B692943E9FD00E7E454 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B682943E9FD00E7E454 /* CoreDataManager.swift */; };
+		954E0B6F2946076500E7E454 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B6E2946076500E7E454 /* FavoritesListViewController.swift */; };
+		954E0B712946077C00E7E454 /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		954E0B642943E20300E7E454 /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		954E0B662943E20F00E7E454 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		954E0B682943E9FD00E7E454 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		954E0B6E2946076500E7E454 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 		952F63FB293F903B008B0FD7 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				954E0B6A2946049000E7E454 /* FavoritesList */,
 				954E0B602943E1C200E7E454 /* AddNote */,
 				954E0B552943C75300E7E454 /* NoteList */,
 				952F63FD293F9048008B0FD7 /* GameList */,
@@ -339,6 +344,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		954E0B6A2946049000E7E454 /* FavoritesList */ = {
+			isa = PBXGroup;
+			children = (
+				954E0B6C294604AC00E7E454 /* Controller */,
+				954E0B6B2946049F00E7E454 /* ViewModel */,
+			);
+			path = FavoritesList;
+			sourceTree = "<group>";
+		};
+		954E0B6B2946049F00E7E454 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		954E0B6C294604AC00E7E454 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				954E0B6E2946076500E7E454 /* FavoritesListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -488,6 +518,8 @@
 				952F6409293FBE66008B0FD7 /* GameListViewModel.swift in Sources */,
 				954E0B652943E20300E7E454 /* AddNoteViewModel.swift in Sources */,
 				952F6410293FD095008B0FD7 /* Constants.swift in Sources */,
+				954E0B712946077C00E7E454 /* FavoritesListViewModel.swift in Sources */,
+				954E0B6F2946076500E7E454 /* FavoritesListViewController.swift in Sources */,
 				952F64192941E80F008B0FD7 /* GameDetailViewController.swift in Sources */,
 				954E0B5F2943CDE400E7E454 /* NoteListViewController.swift in Sources */,
 				954E0B5D2943CDD500E7E454 /* NoteListViewModel.swift in Sources */,
