@@ -6,13 +6,14 @@
 //
 
 import Foundation
-
+import UIKit
 
 protocol GameDetailViewModelProtocol {
     var delegate: GameDetailViewModelDelegate? {get set}
     func fetchGameDetail(id: Int)
     func getGameImageURL() -> URL?
     func getGameName() ->String
+    func prepareImageForSavingCoreData(image: UIImage?)
 }
 
 protocol GameDetailViewModelDelegate: AnyObject {
@@ -23,6 +24,8 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
     
     weak var delegate: GameDetailViewModelDelegate?
     private var game: GameDetailModel?
+    
+    let imageProcessingQueue = DispatchQueue(label: "imageProcessingQueue", attributes: DispatchQueue.Attributes.concurrent)
     
     func fetchGameDetail(id: Int) {
         GameClient.getGameDetail(gameId: id) { [weak self] gameDetail, error in
@@ -40,4 +43,19 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
         game?.name ?? ""
     }
     
+    func prepareImageForSavingCoreData(image: UIImage?) {
+        imageProcessingQueue.async() {
+            if let image = image {
+                guard let imageData = image.jpegData(compressionQuality: 1) else {
+                    //todo:  handle failed conversion
+                    return
+                }
+                CoreDataManager.shared.saveGame(img: imageData)
+            }
+            let text = "save button"
+            NotificationCenter.default.post(name: NSNotification.Name("buttonPressedNotification"), object: text)
+        }
+    }
+    
+
 }

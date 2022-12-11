@@ -364,8 +364,8 @@
             filePath = "RawgGames/Scene/FavoritesList/ViewModel/FavoritesListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "deleteGame(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -380,8 +380,8 @@
             filePath = "RawgGames/Scene/FavoritesList/ViewModel/FavoritesListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "getGameFromFavorites(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -428,8 +428,8 @@
             filePath = "RawgGames/Scene/FavoritesList/ViewModel/FavoritesListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "getFavoriteGames()"
             landmarkType = "7">
          </BreakpointContent>
@@ -444,9 +444,89 @@
             filePath = "RawgGames/Scene/FavoritesList/Controller/FavoritesListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "favoriteGamesChanged()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E0BA723-DD98-4ADF-871E-42E9DCF6032A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "prepareImageForSavingCoreData(image:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E0BA723-DD98-4ADF-871E-42E9DCF6032A - d280e478385569d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RawgGames.GameDetailViewModel.prepareImageForSavingCoreData(image: Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()"
+                  moduleName = "RawgGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tuba/Desktop/final-project-tubanury/RawgGames/RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "9E0BA723-DD98-4ADF-871E-42E9DCF6032A - d280e478385569d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RawgGames.GameDetailViewModel.prepareImageForSavingCoreData(image: Swift.Optional&lt;__C.UIImage&gt;) -&gt; ()"
+                  moduleName = "RawgGames"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tuba/Desktop/final-project-tubanury/RawgGames/RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B101133-AF35-437E-9246-39036D0DF347"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RawgGames/Scene/FavoritesList/ViewModel/FavoritesListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getNotification(controller:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC299B06-D7A8-4206-8606-0027B04F9866"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RawgGames/Scene/FavoritesList/Controller/FavoritesListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

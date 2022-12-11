@@ -13,6 +13,7 @@ protocol FavoritesListViewModelProtocol {
     func getFavoriteGames()
     func getGameFromFavorites(at index: Int) -> Game?
     func deleteGame(at index: Int)
+    
 }
 
 
@@ -43,5 +44,15 @@ class FavoritesListViewModel: FavoritesListViewModelProtocol {
         guard let game = self.getGameFromFavorites(at: index) else {return}
         CoreDataManager.shared.deleteGame(game: game)
         games?.remove(at: index)
+    }
+    
+    func getNotification(controller: UIViewController){
+        NotificationCenter.default.addObserver(self, selector: #selector(handleButton), name: NSNotification.Name("buttonPressedNotification"), object: nil)
+    }
+    @objc func handleButton(_ notification: Notification){
+        if let text = notification.object as? String {
+            print(text)
+        }
+        self.delegate?.favoriteGamesChanged()
     }
 }
