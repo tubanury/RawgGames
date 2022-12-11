@@ -18,13 +18,13 @@ class GameListViewController: UIViewController {
     }
     
     private var viewModel = GameListViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.fetchGames()
+        viewModel.requestNotificationAuthorization()
     }
-
+    
     
 }
 

@@ -80,16 +80,18 @@ final class CoreDataManager {
         return []
     }
     
-    func saveGame(img: Data){
+    func saveGame(img: Data) -> Game? {
         let entity = NSEntityDescription.entity(forEntityName: "Game", in: managedContext)!
         let game = NSManagedObject(entity: entity, insertInto: managedContext)
         game.setValue(img, forKey: "image")
         
         do {
             try managedContext.save()
+            return game as? Game
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+        return nil
         
     }
     

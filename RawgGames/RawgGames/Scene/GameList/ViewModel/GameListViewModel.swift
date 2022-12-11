@@ -6,14 +6,14 @@
 //
 
 import Foundation
-
+import UserNotifications
 
 protocol GameListViewModelProtocol {
     var delegate: GameListViewModelDelegate? {get set}
     func fetchGames()
     func getGameCount() -> Int
     func getGame(at index: Int) -> GameModel?
-    
+    func requestNotificationAuthorization()
 }
 
 protocol GameListViewModelDelegate: AnyObject {
@@ -25,7 +25,8 @@ class GameListViewModel: GameListViewModelProtocol {
     
     weak var delegate: GameListViewModelDelegate?
     private var games: [GameModel]?
-    
+    let userNotificationCenter = UNUserNotificationCenter.current()
+
     func fetchGames() {
         GameClient.getGames { [weak self] games, error in
             guard let self = self else {return}
@@ -43,4 +44,14 @@ class GameListViewModel: GameListViewModelProtocol {
         return games?[index]
     }
     
+     func requestNotificationAuthorization(){
+        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+        userNotificationCenter.requestAuthorization(options: authOptions) { _, error in
+            if let error = error {
+                //todo: handle error
+            }
+            //self.delegate?.sendNotification()
+        }
+    }
+   
 }

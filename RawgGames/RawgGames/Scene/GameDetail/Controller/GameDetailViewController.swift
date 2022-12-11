@@ -25,7 +25,7 @@ final class GameDetailViewController: UIViewController {
     }
 
     @IBAction func didAddFavoriteButtonTapped(_ sender: Any) {
-        viewModel.prepareImageForSavingCoreData(image: gameImageView.image)
+        viewModel.addToFavorites(image: gameImageView.image)
     }
 }
 
@@ -35,5 +35,21 @@ extension GameDetailViewController: GameDetailViewModelDelegate {
         guard let url = viewModel.getGameImageURL() else {return}
         gameImageView.af.setImage(withURL: url)
     }
+    
+    func sendNotification(){
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "RawgGames"
+        notificationContent.body = "Did you play your new fave games? Check it out!"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let request = UNNotificationRequest(identifier: "FavoritesNotification", content: notificationContent, trigger: trigger)
+        
+        viewModel.userNotificationCenter.add(request){ error in
+            if let error = error {
+                //todo: handle error
+            }
+        }
+    }
+    
 }
 

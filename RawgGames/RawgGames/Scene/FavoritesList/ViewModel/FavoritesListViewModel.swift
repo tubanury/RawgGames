@@ -46,13 +46,13 @@ class FavoritesListViewModel: FavoritesListViewModelProtocol {
         games?.remove(at: index)
     }
     
-    func getNotification(controller: UIViewController){
+    func getNotification(controller: UIViewController) {
         NotificationCenter.default.addObserver(self, selector: #selector(handleButton), name: NSNotification.Name("buttonPressedNotification"), object: nil)
     }
     @objc func handleButton(_ notification: Notification){
         if let text = notification.object as? String {
             print(text)
         }
-        self.delegate?.favoriteGamesChanged()
+        self.getFavoriteGames()
     }
 }

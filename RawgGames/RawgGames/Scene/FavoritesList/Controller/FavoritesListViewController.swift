@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FavoritesListViewController: UIViewController {
 
@@ -17,24 +18,18 @@ class FavoritesListViewController: UIViewController {
     }
     
     private var viewModel = FavoritesListViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.getFavoriteGames()
         viewModel.getNotification(controller: self)
-        /*NotificationCenter.default.addObserver(self, selector: #selector(handleButton), name: NSNotification.Name("buttonPressedNotification"), object: nil)*/
     }
-    /*@objc func handleButton(_ notification: Notification){
-        if let text = notification.object as? String {
-            print(text)
-        }
-        self.delegate?.favoriteGamesChanged()
-    }*/
+
 }
 extension FavoritesListViewController: FavoriteListViewModelDelegate {
     func favoriteGamesChanged() {
-        favoritesListTableView.reloadData()
+        self.favoritesListTableView.reloadData()
     }
 }
 extension FavoritesListViewController: UITableViewDelegate, UITableViewDataSource {
