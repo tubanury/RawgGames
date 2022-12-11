@@ -69,4 +69,37 @@ final class CoreDataManager {
         return note
         
     }
+    func fetchGames() -> [Game]{
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Game")
+        do {
+            let games = try managedContext.fetch(fetchRequest)
+            return games as! [Game]
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        return []
+    }
+    
+    func saveGame(img: Data){
+        let entity = NSEntityDescription.entity(forEntityName: "Game", in: managedContext)!
+        let game = NSManagedObject(entity: entity, insertInto: managedContext)
+        game.setValue(img, forKey: "image")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    func deleteGame(game: Game) {
+        managedContext.delete(game)
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
 }

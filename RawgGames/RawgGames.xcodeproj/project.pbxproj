@@ -36,6 +36,7 @@
 		954E0B692943E9FD00E7E454 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B682943E9FD00E7E454 /* CoreDataManager.swift */; };
 		954E0B6F2946076500E7E454 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B6E2946076500E7E454 /* FavoritesListViewController.swift */; };
 		954E0B712946077C00E7E454 /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */; };
+		954E0B742946340500E7E454 /* FavoritesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B732946340500E7E454 /* FavoritesListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		954E0B682943E9FD00E7E454 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		954E0B6E2946076500E7E454 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
+		954E0B732946340500E7E454 /* FavoritesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +349,7 @@
 		954E0B6A2946049000E7E454 /* FavoritesList */ = {
 			isa = PBXGroup;
 			children = (
+				954E0B72294633EC00E7E454 /* View */,
 				954E0B6C294604AC00E7E454 /* Controller */,
 				954E0B6B2946049F00E7E454 /* ViewModel */,
 			);
@@ -367,6 +370,14 @@
 				954E0B6E2946076500E7E454 /* FavoritesListViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		954E0B72294633EC00E7E454 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				954E0B732946340500E7E454 /* FavoritesListTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +539,7 @@
 				952F641D2941E877008B0FD7 /* GameDetailModel.swift in Sources */,
 				954E0B5B2943CDC700E7E454 /* NoteListTableViewCell.swift in Sources */,
 				952F6405293F96A8008B0FD7 /* GameModel.swift in Sources */,
+				954E0B742946340500E7E454 /* FavoritesListTableViewCell.swift in Sources */,
 				952F640B293FCECD008B0FD7 /* GameClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

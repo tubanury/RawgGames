@@ -8,6 +8,40 @@
 import UIKit
 
 protocol FavoritesListViewModelProtocol {
-    //func getFavoriteGameCount() -> Int
-    //func getGameFromFavorites(at index: Int) -> GameModel?
+    var delegate: FavoriteListViewModelDelegate? {get set}
+    func getFavoriteGameCount() -> Int
+    func getFavoriteGames()
+    func getGameFromFavorites(at index: Int) -> Game?
+    func deleteGame(at index: Int)
+}
+
+
+protocol FavoriteListViewModelDelegate: AnyObject {
+    func favoriteGamesChanged()
+    
+}
+class FavoritesListViewModel: FavoritesListViewModelProtocol {
+   
+    
+    weak var delegate: FavoriteListViewModelDelegate?
+    private var games: [Game]?
+    
+    func getFavoriteGameCount() -> Int {
+        games?.count ?? 0
+    }
+    
+    func getFavoriteGames() {
+        self.games = CoreDataManager.shared.fetchGames()
+        self.delegate?.favoriteGamesChanged()
+    }
+    
+    func getGameFromFavorites(at index: Int) -> Game? {
+        games?[index]
+    }
+    
+    func deleteGame(at index: Int) {
+        guard let game = self.getGameFromFavorites(at: index) else {return}
+        CoreDataManager.shared.deleteGame(game: game)
+        games?.remove(at: index)
+    }
 }

@@ -10,8 +10,8 @@ import AlamofireImage
 
 final class GameTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var gameImage: UIImageView!
-    @IBOutlet private weak var gameName: UILabel!
+    @IBOutlet  weak var gameImage: UIImageView!
+    @IBOutlet  weak var gameName: UILabel!
 
     func configureCell(game: GameModel){
         gameName.text = game.name
