@@ -19,13 +19,9 @@ final class GameDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-        UINavigationBar.appearance().tintColor = UIColor.white
-
         guard let id  = gameId else {return}
         viewModel.delegate = self
         viewModel.fetchGameDetail(id: id)
-        
     }
 
     @IBAction func didAddFavoriteButtonTapped(_ sender: Any) {
@@ -42,8 +38,8 @@ extension GameDetailViewController: GameDetailViewModelDelegate {
     
     func sendNotification(){
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = "Recently added new favorite games."
-        notificationContent.body = "Did you play your new fave games? Check it out!"
+        notificationContent.title = "RawgGames".localized(with: "App name")
+        notificationContent.body = "Did you play your new fave games? Check it out!".localized()
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let request = UNNotificationRequest(identifier: "FavoritesNotification", content: notificationContent, trigger: trigger)

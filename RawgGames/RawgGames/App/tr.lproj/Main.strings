@@ -1,0 +1,54 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "7O2-Nb-uiX"; */
+"7O2-Nb-uiX.title" = "Oyunlar";
+
+/* Class = "UITextField"; placeholder = "Enter season info"; ObjectID = "CKb-dJ-nSS"; */
+"CKb-dJ-nSS.placeholder" = "Enter season info";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Eu5-cx-fuI"; */
+"Eu5-cx-fuI.title" = "Favoriler";
+
+/* Class = "UIBarButtonItem"; title = "Games"; ObjectID = "GhA-ED-psv"; */
+"GhA-ED-psv.title" = "Games";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "IsN-2C-OAg"; */
+"IsN-2C-OAg.title" = "Notlar";
+
+/* Class = "UILabel"; text = "And Your Note.."; ObjectID = "KMq-Q2-g83"; */
+"KMq-Q2-g83.text" = "And Your Note..";
+
+/* Class = "UILabel"; text = "Game"; ObjectID = "L2t-p7-ras"; */
+"L2t-p7-ras.text" = "Game";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Q2t-qu-k09"; */
+"Q2t-qu-k09.text" = "Title";
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "VCl-rq-S6F"; */
+"VCl-rq-S6F.configuration.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VCl-rq-S6F"; */
+"VCl-rq-S6F.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cmG-WH-mr6"; */
+"cmG-WH-mr6.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gQJ-Ph-200"; */
+"gQJ-Ph-200.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "iX5-F3-WM3"; */
+"iX5-F3-WM3.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "lU3-lA-F5n"; */
+"lU3-lA-F5n.title" = "Item";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "pzH-02-xhI"; */
+"pzH-02-xhI.text" = "Subtitle";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "q4h-O9-7Nv"; */
+"q4h-O9-7Nv.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rxI-cw-5pG"; */
+"rxI-cw-5pG.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wMP-Yn-DKX"; */
+"wMP-Yn-DKX.text" = "Label";
