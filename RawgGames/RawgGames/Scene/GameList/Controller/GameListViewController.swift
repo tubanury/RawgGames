@@ -19,6 +19,11 @@ class GameListViewController: UIViewController {
         }
     }
     
+    
+    
+    
+    
+    
     private var viewModel = GameListViewModel()
     
     override func viewDidLoad() {
@@ -45,7 +50,8 @@ class GameListViewController: UIViewController {
         self.navigationItem.searchController = search
         self.navigationController?.navigationBar.prefersLargeTitles = true
 
-        self.navigationItem.title = "RawgGames"
+        self.navigationItem.title = "Start Playing!"
+       
         self.navigationItem.titleView?.tintColor = .white
        
         let appearance = UINavigationBarAppearance()
