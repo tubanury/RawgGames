@@ -19,11 +19,6 @@ class GameListViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
-    
     private var viewModel = GameListViewModel()
     
     override func viewDidLoad() {
@@ -88,6 +83,8 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
         guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameDetailViewController") as? GameDetailViewController else {return}
         detailVC.gameId = viewModel.getGame(at: indexPath.row)?.id
         self.navigationController!.pushViewController(detailVC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+        //detailVC.modalPresentationStyle = .overFullScreen
         //present(detailVC, animated: true)
     }
    
