@@ -49,6 +49,9 @@ extension FavoritesListViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameDetailViewController") as? GameDetailViewController else {return}
+        detailVC.gameId = Int(truncatingIfNeeded: viewModel.getGameFromFavorites(at: indexPath.row)?.id ?? 0)
+        self.navigationController!.pushViewController(detailVC, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
