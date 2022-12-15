@@ -23,20 +23,25 @@ protocol GameDetailViewModelProtocol {
     func getGameReleaseYear() -> String
     func getGameDeveloperName() -> String
     func getGameAddedCount() -> Int
-    func addToFavorites(image: UIImage?)
-    func prepareImageForSavingCoreData(image: UIImage?)
+    func getGameDescription() -> String
+    func getSimilarGames() -> [Result]?
+    func getSimilarGame(at index: Int) -> Result?
+    func getSimilarGamesCount() -> Int
+    func addToFavorites(image: UIImage?) -> Bool
+    func prepareImageForSavingCoreData(image: UIImage?) -> Data
 }
 
 protocol GameDetailViewModelDelegate: AnyObject {
-    func gameLoaded()
+    func gameLoaded(isFavorite: Bool)
+    func similarGamesLoaded()
     func sendNotification()
 }
 
 final class GameDetailViewModel: GameDetailViewModelProtocol {
-    
 
     weak var delegate: GameDetailViewModelDelegate?
     private var game: GameDetailModel?
+    private var similarGames: [Result]?
     let userNotificationCenter =  UNUserNotificationCenter.current()
     
     let imageProcessingQueue = DispatchQueue(label: "imageProcessingQueue", attributes: DispatchQueue.Attributes.concurrent)
@@ -45,8 +50,19 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
         GameClient.getGameDetail(gameId: id) { [weak self] gameDetail, error in
             guard let self = self else {return}
             self.game = gameDetail
-            self.delegate?.gameLoaded()
+            let isFave = CoreDataManager.shared.isGameSaved(id: id).count > 0
+            self.delegate?.gameLoaded(isFavorite: isFave)
         }
+    }
+    func fetchGamesFromSameSeries(id: Int) {
+        GameClient.getGamesFromSameSeries(gameId: id) { [weak self] similar, error in
+            guard let self = self else {return}
+            self.similarGames = similar
+            self.delegate?.similarGamesLoaded()
+        }
+    }
+    func fetchGamesFromSameDevelopers(){
+        
     }
     
     func getGameImageURL() -> URL? {
@@ -91,21 +107,45 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
     func getGameAddedCount() -> Int {
         game?.added ?? 0
     }
-    
-    func addToFavorites(image: UIImage?){
-        prepareImageForSavingCoreData(image: image)
+    func getGameDescription() -> String {
+        game?.descriptionRaw ?? "No Description"
     }
     
-    func prepareImageForSavingCoreData(image: UIImage?) {
+    func getSimilarGames() -> [Result]? {
+        similarGames ?? []
+    }
+    
+    func getSimilarGame(at index: Int) -> Result? {
+        similarGames?[index]
+    }
+    func getSimilarGamesCount() -> Int {
+        similarGames?.count ?? 0
+    }
+
+    func addToFavorites(image: UIImage?) -> Bool{
+        guard let game else {return false}
+        if CoreDataManager.shared.isGameSaved(id: game.id).count > 0{
+            CoreDataManager.shared.deleteGame(game: CoreDataManager.shared.isGameSaved(id: game.id).first!)
+            NotificationCenter.default.post(name: NSNotification.Name("buttonPressedNotification"), object: "save button")
+            self.delegate?.sendNotification()
+            return false
+        }
+        else {
+            let imageData = prepareImageForSavingCoreData(image: image)
+            guard CoreDataManager.shared.saveGame(id: game.id , name: game.name , tag: game.tags.first?.name ?? "", img: imageData) != nil else {return false}
+           
+            NotificationCenter.default.post(name: NSNotification.Name("buttonPressedNotification"), object: "save button")
+            self.delegate?.sendNotification()
+            return true
+        }
+    }
+    
+    func prepareImageForSavingCoreData(image: UIImage?) -> Data {
         if let image = image {
-            guard let imageData = image.jpegData(compressionQuality: 1) else {
-                return
+            if let imageData = image.jpegData(compressionQuality: 1) {
+                return imageData
             }
-        guard let game = CoreDataManager.shared.saveGame(img: imageData) else {return}
-        let text = "save button"
-        NotificationCenter.default.post(name: NSNotification.Name("buttonPressedNotification"), object: text)
-        self.delegate?.sendNotification()
-      }
-        
+        }
+        return Data()
     }
 }

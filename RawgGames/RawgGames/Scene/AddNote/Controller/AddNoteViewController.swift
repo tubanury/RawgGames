@@ -17,6 +17,7 @@ class AddNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
         viewModel.delegate = self
         configureView()
     }
@@ -36,6 +37,8 @@ class AddNoteViewController: UIViewController {
         noteTitle.text = viewModel.getNoteTitle()
         noteText.text = viewModel.getNoteText()
     }
+    
+    
 }
 extension AddNoteViewController: AddNoteViewModelDelegate {
     func noteInformationsLoaded() {

@@ -49,6 +49,7 @@ class FavoritesListViewModel: FavoritesListViewModelProtocol {
     func getNotification(controller: UIViewController) {
         NotificationCenter.default.addObserver(self, selector: #selector(handleButton), name: NSNotification.Name("buttonPressedNotification"), object: nil)
     }
+    
     @objc func handleButton(_ notification: Notification){
         if let text = notification.object as? String {
             print(text)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameListViewController: UIViewController {
+class GameListViewController: BaseViewController {
     
     lazy var search = UISearchController(searchResultsController: nil)
 
@@ -50,7 +50,6 @@ class GameListViewController: UIViewController {
         self.navigationItem.titleView?.tintColor = .white
        
         let appearance = UINavigationBarAppearance()
-        UINavigationBar.appearance().tintColor = UIColor.white
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         appearance.backgroundColor = #colorLiteral(red: 1, green: 0.7009803653, blue: 0.0008152386872, alpha: 0.8632295116)
@@ -84,8 +83,7 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
         detailVC.gameId = viewModel.getGame(at: indexPath.row)?.id
         self.navigationController!.pushViewController(detailVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
-        //detailVC.modalPresentationStyle = .overFullScreen
-        //present(detailVC, animated: true)
+       
     }
    
    

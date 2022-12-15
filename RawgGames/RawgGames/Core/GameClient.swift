@@ -27,6 +27,16 @@ final class GameClient {
         handleResponse(urlString: urlString, responseType: GameDetailModel.self, completion: completion)
     }
     
+    static func getGamesFromSameSeries(gameId: Int, completion: @escaping ([Result]?, Error?) -> Void) {
+
+        let urlString = BASE_URL + "games/" + String(gameId) + "/game-series?key=" + Constants.API_KEY
+        print(urlString)
+        handleResponse(urlString: urlString, responseType: GamesFromSameSeriesModel.self) { responseModel, error in
+            completion(responseModel?.results, error)
+        }
+    }
+    
+    
     static private func handleResponse<T: Decodable>(urlString: String, responseType: T.Type, completion: @escaping (T?, Error?) -> Void) {
         AF.request(urlString).response { response in
             guard let data = response.value else {

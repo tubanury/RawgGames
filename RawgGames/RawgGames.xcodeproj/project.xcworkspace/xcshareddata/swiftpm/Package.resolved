@@ -17,6 +17,15 @@
         "revision" : "98cbb00ce0ec5fc8e52a5b50a6bfc08d3e5aee10",
         "version" : "4.2.0"
       }
+    },
+    {
+      "identity" : "materialactivityindicator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nspavlo/MaterialActivityIndicator",
+      "state" : {
+        "revision" : "9ed85a25d1870c57f3c3934425ebcdc5aea68736",
+        "version" : "0.0.7"
+      }
     }
   ],
   "version" : 2
