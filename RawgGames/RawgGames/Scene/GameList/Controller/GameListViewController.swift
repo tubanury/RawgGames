@@ -25,6 +25,7 @@ class GameListViewController: BaseViewController {
         super.viewDidLoad()
         configureView()
         viewModel.delegate = self
+        indicator.startAnimating()
         viewModel.fetchGames()
         viewModel.requestNotificationAuthorization()
        
@@ -36,7 +37,6 @@ class GameListViewController: BaseViewController {
     
     func configureView(){
         
-        //search.obscuresBackgroundDuringPresentation = false
         search.hidesNavigationBarDuringPresentation = false
         search.searchBar.tintColor = .white
         search.searchBar.placeholder = "search...".localized()
@@ -61,6 +61,7 @@ class GameListViewController: BaseViewController {
 
 extension GameListViewController: GameListViewModelDelegate {
     func gamesLoaded() {
+        indicator.stopAnimating()
         gameListTableView.reloadData()
     }
 }
