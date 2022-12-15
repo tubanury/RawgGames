@@ -28,4 +28,10 @@ class BaseViewController: UIViewController {
         indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
+    func presentAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

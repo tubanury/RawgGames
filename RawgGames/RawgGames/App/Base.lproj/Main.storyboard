@@ -631,7 +631,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AKs-cx-shI">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AKs-cx-shI">
                                         <rect key="frame" x="0.0" y="96.333333333333343" width="373" height="499.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -807,7 +807,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="L3s-hn-5Kx"/>
+        <segue reference="oIy-fM-NxL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward.circle" catalog="system" width="128" height="123"/>

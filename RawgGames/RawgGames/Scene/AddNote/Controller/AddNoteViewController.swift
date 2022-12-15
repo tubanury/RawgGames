@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AddNoteViewController: UIViewController {
-
+class AddNoteViewController: BaseViewController {
+    
     @IBOutlet weak var noteTitle: UITextField!
     
     @IBOutlet weak var noteText: UITextView!
@@ -23,19 +23,28 @@ class AddNoteViewController: UIViewController {
     }
     
     @IBAction func didSaveButtonTapped(_ sender: Any) {
+        if self.noteText.text == "" || self.noteTitle.text == "" {
+            presentAlert(title: "Warning!", message: "Note text or title can not be empty.")
+            return
+        }
         if let note = viewModel.note{
             note.noteText = self.noteText.text
             note.noteTitle = self.noteTitle.text
             viewModel.delegateNoteList?.noteUpdated(note: note)
         }
         else {
-            viewModel.delegateNoteList?.noteAdded(title: self.noteTitle.text ?? "", text: self.noteText.text ?? "")
+            viewModel.delegateNoteList?.noteAdded(title: self.noteTitle.text!, text: self.noteText.text)
         }
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
     func configureView(){
+        noteText.becomeFirstResponder()
+       
         noteTitle.text = viewModel.getNoteTitle()
         noteText.text = viewModel.getNoteText()
+        
+       
     }
     
     

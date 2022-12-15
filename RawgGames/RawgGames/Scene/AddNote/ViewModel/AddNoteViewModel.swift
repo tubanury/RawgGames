@@ -9,8 +9,8 @@ import Foundation
 
 protocol AddNoteViewModelProtocol {
     var delegate: AddNoteViewModelDelegate? {get set}
-    func getNoteTitle() -> String
-    func getNoteText() -> String
+    func getNoteTitle() -> String?
+    func getNoteText() -> String?
     
 }
 
@@ -30,11 +30,11 @@ final class AddNoteViewModel: AddNoteViewModelProtocol {
         self.delegate?.noteInformationsLoaded()
     }*/
     
-    func getNoteTitle() -> String {
-        note?.noteTitle ?? ""
+    func getNoteTitle() -> String? {
+        note?.noteTitle
     }
-    func getNoteText() -> String {
-        note?.noteText ?? ""
+    func getNoteText() -> String? {
+        note?.noteText
     }
     
     
