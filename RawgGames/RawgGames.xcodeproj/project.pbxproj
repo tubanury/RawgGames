@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950E7D0E2947A15000F2D3DE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950E7D0D2947A15000F2D3DE /* Extension.swift */; };
+		950E7D0E2947A15000F2D3DE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950E7D0D2947A15000F2D3DE /* String+Extensions.swift */; };
 		950E7D112947A3A600F2D3DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 950E7D132947A3A600F2D3DE /* Localizable.strings */; };
 		951059A3294BBAB500CFD9AD /* MaterialActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 951059A2294BBAB500CFD9AD /* MaterialActivityIndicator */; };
 		951059A6294BBB9F00CFD9AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951059A5294BBB9F00CFD9AD /* BaseViewController.swift */; };
+		951059A8294BC7E900CFD9AD /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951059A7294BC7E900CFD9AD /* CALayer+Extensions.swift */; };
 		952F63C7293F8F9E008B0FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F63C6293F8F9E008B0FD7 /* AppDelegate.swift */; };
 		952F63C9293F8F9E008B0FD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F63C8293F8F9E008B0FD7 /* SceneDelegate.swift */; };
 		952F63CB293F8F9E008B0FD7 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F63CA293F8F9E008B0FD7 /* GameListViewController.swift */; };
@@ -66,10 +67,11 @@
 
 /* Begin PBXFileReference section */
 		950E7D0B29479E9900F2D3DE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		950E7D0D2947A15000F2D3DE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		950E7D0D2947A15000F2D3DE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		950E7D122947A3A600F2D3DE /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		950E7D142947A3A900F2D3DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		951059A5294BBB9F00CFD9AD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		951059A7294BC7E900CFD9AD /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		952F63C3293F8F9E008B0FD7 /* RawgGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawgGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		952F63C6293F8F9E008B0FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		952F63C8293F8F9E008B0FD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		950E7D0C2947A13F00F2D3DE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				950E7D0D2947A15000F2D3DE /* Extension.swift */,
+				951059A9294BC88100CFD9AD /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -150,6 +152,15 @@
 				951059A5294BBB9F00CFD9AD /* BaseViewController.swift */,
 			);
 			path = BaseComponent;
+			sourceTree = "<group>";
+		};
+		951059A9294BC88100CFD9AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				950E7D0D2947A15000F2D3DE /* String+Extensions.swift */,
+				951059A7294BC7E900CFD9AD /* CALayer+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		952F63BA293F8F9E008B0FD7 = {
@@ -580,9 +591,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950E7D0E2947A15000F2D3DE /* Extension.swift in Sources */,
+				950E7D0E2947A15000F2D3DE /* String+Extensions.swift in Sources */,
 				952F6403293F9673008B0FD7 /* GameTableViewCell.swift in Sources */,
 				952F641B2941E866008B0FD7 /* GameDetailViewModel.swift in Sources */,
+				951059A8294BC7E900CFD9AD /* CALayer+Extensions.swift in Sources */,
 				954E0B672943E20F00E7E454 /* AddNoteViewController.swift in Sources */,
 				954E0B692943E9FD00E7E454 /* CoreDataManager.swift in Sources */,
 				951059A6294BBB9F00CFD9AD /* BaseViewController.swift in Sources */,

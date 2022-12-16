@@ -40,11 +40,8 @@ class AddNoteViewController: BaseViewController {
     
     func configureView(){
         noteText.becomeFirstResponder()
-       
         noteTitle.text = viewModel.getNoteTitle()
         noteText.text = viewModel.getNoteText()
-        
-       
     }
     
     

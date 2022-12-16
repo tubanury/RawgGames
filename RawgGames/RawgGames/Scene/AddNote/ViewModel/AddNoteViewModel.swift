@@ -25,11 +25,6 @@ final class AddNoteViewModel: AddNoteViewModelProtocol {
     
     var note: Note?
     
-    /*func setNote(note: Note){
-        self.note = note
-        self.delegate?.noteInformationsLoaded()
-    }*/
-    
     func getNoteTitle() -> String? {
         note?.noteTitle
     }

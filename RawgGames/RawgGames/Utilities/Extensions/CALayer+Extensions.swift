@@ -1,18 +1,12 @@
 //
-//  Extension.swift
+//  CALayer+Extensions.swift
 //  RawgGames
 //
-//  Created by Tuba N. Yıldız on 12.12.2022.
+//  Created by Tuba N. Yıldız on 16.12.2022.
 //
 
 import Foundation
 import UIKit
-
-extension String {
-    func localized(with comment: String = "") -> String {
-        return NSLocalizedString(self, comment: comment)
-    }
-}
 
 extension CALayer {
 
