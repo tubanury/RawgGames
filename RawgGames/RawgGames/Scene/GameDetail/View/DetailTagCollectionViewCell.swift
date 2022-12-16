@@ -31,7 +31,7 @@ final class DetailTagCollectionViewCell: UICollectionViewCell {
                 self.layer.addBorder(edge: .right, color: .systemGray4, thickness: 2)
 
             case 3:
-                button.setImage(UIImage(systemName: "person.3.fill"), for: .normal)
+                button.setImage(UIImage(systemName: "person.2.fill"), for: .normal)
                 button.setTitle(developer, for: .normal)
                 subTitle.text = "Developers"
 

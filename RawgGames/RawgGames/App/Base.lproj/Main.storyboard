@@ -22,15 +22,15 @@
                                 <rect key="frame" x="0.0" y="113" width="393" height="656"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="100" id="wKe-9H-ktD" customClass="GameTableViewCell" customModule="RawgGames" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="100" id="wKe-9H-ktD" customClass="GameTableViewCell" customModule="RawgGames" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wKe-9H-ktD" id="LmG-2s-DaE">
-                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="m1h-jh-7hs">
-                                                    <rect key="frame" x="10" y="5" width="237" height="90"/>
+                                                    <rect key="frame" x="10" y="5" width="221" height="90"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hwd-Yi-4X1">
                                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -45,56 +45,65 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="MkY-j5-Stn">
-                                                            <rect key="frame" x="116" y="0.0" width="121" height="90"/>
+                                                            <rect key="frame" x="116" y="0.0" width="105" height="90"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMP-Yn-DKX">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="23.333333333333332"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="23.333333333333332"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmG-WH-mr6">
-                                                                    <rect key="frame" x="0.0" y="30.333333333333336" width="121" height="18.333333333333336"/>
+                                                                    <rect key="frame" x="0.0" y="30.333333333333336" width="105" height="18.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="81f-BC-60n">
-                                                                    <rect key="frame" x="0.0" y="55.666666666666657" width="121" height="34.333333333333343"/>
+                                                                <stackView opaque="NO" contentMode="left" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="81f-BC-60n">
+                                                                    <rect key="frame" x="0.0" y="55.666666666666657" width="105" height="34.333333333333343"/>
                                                                     <subviews>
-                                                                        <button opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNY-iD-1Fo">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="34.333333333333336"/>
+                                                                        <button opaque="NO" contentMode="left" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNY-iD-1Fo">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="34.333333333333336"/>
+                                                                            <accessibility key="accessibilityConfiguration">
+                                                                                <bool key="isElement" value="NO"/>
+                                                                            </accessibility>
                                                                             <color key="tintColor" red="0.92941176889999999" green="0.73725497719999999" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <state key="normal" title="Button"/>
-                                                                            <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="" imagePadding="0.0">
+                                                                            <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="" imagePadding="0.0" buttonSize="mini">
                                                                                 <imageReference key="image" image="star.fill" catalog="system" symbolScale="small"/>
                                                                             </buttonConfiguration>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu2-rQ-XSa">
-                                                                            <rect key="frame" x="41.666666666666657" y="0.0" width="9" height="34.333333333333336"/>
+                                                                            <rect key="frame" x="35.333333333333343" y="0.0" width="9" height="34.333333333333336"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" systemColor="systemGrayColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmy-uJ-khc">
-                                                                            <rect key="frame" x="50.666666666666657" y="0.0" width="37.333333333333343" height="34.333333333333336"/>
+                                                                            <rect key="frame" x="44.333333333333343" y="0.0" width="31.666666666666671" height="34.333333333333336"/>
+                                                                            <accessibility key="accessibilityConfiguration">
+                                                                                <bool key="isElement" value="NO"/>
+                                                                            </accessibility>
                                                                             <color key="tintColor" red="0.92941176889999999" green="0.73725497719999999" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <state key="normal" title="Button"/>
-                                                                            <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="">
+                                                                            <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" title="" buttonSize="mini">
                                                                                 <imageReference key="image" image="arrow.down.to.line.compact" catalog="system" symbolScale="small"/>
                                                                             </buttonConfiguration>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MI-Ml-Fhk">
-                                                                            <rect key="frame" x="88" y="0.0" width="9" height="34.333333333333336"/>
+                                                                            <rect key="frame" x="76" y="0.0" width="9" height="34.333333333333336"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="textColor" systemColor="systemGrayColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZf-To-7eC">
-                                                                            <rect key="frame" x="97" y="0.0" width="24" height="34.333333333333336"/>
+                                                                            <rect key="frame" x="85" y="0.0" width="20" height="34.333333333333336"/>
+                                                                            <accessibility key="accessibilityConfiguration">
+                                                                                <bool key="isElement" value="NO"/>
+                                                                            </accessibility>
                                                                             <color key="tintColor" red="0.92941176889999999" green="0.73725497719999999" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <state key="normal" title="Button"/>
-                                                                            <buttonConfiguration key="configuration" style="plain" title=""/>
+                                                                            <buttonConfiguration key="configuration" style="plain" title="" buttonSize="mini"/>
                                                                         </button>
                                                                     </subviews>
                                                                     <constraints>
@@ -253,30 +262,30 @@
                                     <constraint firstAttribute="height" constant="80" id="rFV-vX-DwI"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="14G-fN-JrJ">
-                                    <size key="itemSize" width="120" height="80"/>
+                                    <size key="itemSize" width="100" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailTagCollectionViewCell" id="fbB-PT-r6P" customClass="DetailTagCollectionViewCell" customModule="RawgGames" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RZ8-Ix-TCF">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Up-cw-jER">
-                                                    <rect key="frame" x="23" y="15" width="74" height="50"/>
+                                                    <rect key="frame" x="17.666666666666671" y="15" width="65" height="50"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iO-Pm-7bk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="22.666666666666668"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="22.666666666666668"/>
                                                             <color key="tintColor" red="0.92941176889999999" green="0.73725497719999999" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="button" buttonSize="small"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y80-EH-zzT">
-                                                            <rect key="frame" x="21" y="27.666666666666664" width="32" height="22.333333333333336"/>
+                                                            <rect key="frame" x="16.333333333333329" y="27.666666666666664" width="32" height="22.333333333333336"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -807,7 +816,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oIy-fM-NxL"/>
+        <segue reference="L3s-hn-5Kx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward.circle" catalog="system" width="128" height="123"/>
@@ -825,6 +834,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
