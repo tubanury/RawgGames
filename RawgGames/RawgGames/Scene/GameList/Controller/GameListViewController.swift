@@ -25,9 +25,12 @@ class GameListViewController: BaseViewController {
         super.viewDidLoad()
         configureView()
         viewModel.delegate = self
+        search.searchBar.delegate = self
         indicator.startAnimating()
         viewModel.fetchGames()
         viewModel.requestNotificationAuthorization()
+        gameListTableView.refreshControl = UIRefreshControl()
+        gameListTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
        
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -57,12 +60,18 @@ class GameListViewController: BaseViewController {
         self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
     }
     
+    @objc func didPullToRefresh(){
+        viewModel.fetchGames()
+    }
+    
 }
 
 extension GameListViewController: GameListViewModelDelegate {
     func gamesLoaded() {
-        indicator.stopAnimating()
         gameListTableView.reloadData()
+        indicator.stopAnimating()
+        self.gameListTableView.refreshControl?.endRefreshing()
+
     }
 }
 
@@ -86,8 +95,13 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
        
     }
-   
-   
 }
 
+extension GameListViewController: UISearchBarDelegate {    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = search.searchBar.text else {return}
+        indicator.startAnimating()
+        viewModel.fetchGamesBySearchText(searchText: text)
+    }
+}
 

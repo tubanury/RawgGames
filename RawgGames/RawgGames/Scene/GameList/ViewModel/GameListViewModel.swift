@@ -28,6 +28,7 @@ class GameListViewModel: GameListViewModelProtocol {
     let userNotificationCenter = UNUserNotificationCenter.current()
 
     func fetchGames() {
+        self.games?.removeAll()
         GameClient.getGames { [weak self] games, error in
             guard let self = self else {return}
             if let _ =  error {
@@ -37,6 +38,20 @@ class GameListViewModel: GameListViewModelProtocol {
             self.delegate?.gamesLoaded()
         }
     }
+    
+    func fetchGamesBySearchText(searchText: String){
+        GameClient.getGamesBySearchText(searchText: searchText) { [weak self] searchGames, error in
+            guard let self = self else {return}
+            if let _ =  error {
+                //self.delegate?.gamesFailed()
+            }
+            print(searchGames)
+            self.games = searchGames
+            self.delegate?.gamesLoaded()
+        }
+        
+    }
+    
     func getGameCount() -> Int {
         games?.count ?? 0
     }

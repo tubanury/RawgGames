@@ -29,6 +29,12 @@ final class GameTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         gameImage.image = nil
+        gameName.text = ""
+        gameGenre.text = ""
+        gameRating.setTitle("", for: .normal)
+        gameAdded.setTitle("", for: .normal)
+        gameTag.setTitle("", for: .normal)
     }
 }

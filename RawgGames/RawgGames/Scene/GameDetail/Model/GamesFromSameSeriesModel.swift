@@ -13,16 +13,16 @@ import Foundation
 
 import Foundation
 
-// MARK: - GamesFromSameSeriesModel
-struct GamesFromSameSeriesModel: Codable {
+// MARK: - FilteredGamesModel
+struct FilteredGamesModel {
     let count: Int
-    let next, previous: JSONNull?
+    //let next, previous: JSONNull?
     let results: [Result]
 }
 
 // MARK: - Result
-struct Result: Codable {
-    let id: Int
+struct Result {
+    /*let id: Int
     let slug, name, released: String
     let tba: Bool
     let backgroundImage: String
@@ -68,9 +68,13 @@ struct Result: Codable {
         case genres, stores, clip, tags
         case esrbRating = "esrb_rating"
         case shortScreenshots = "short_screenshots"
-    }
+    }*/
 }
-
+/*
+// MARK: - Platform
+struct Platform: Codable {
+    let platform: Genre
+}
 
 // MARK: - Encode/decode helpers
 
@@ -98,3 +102,4 @@ class JSONNull: Codable, Hashable {
         try container.encodeNil()
     }
 }
+*/

@@ -46,6 +46,7 @@
 		956C9A48294A61CC00BDB870 /* GamesFromSameSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C9A47294A61CC00BDB870 /* GamesFromSameSeriesModel.swift */; };
 		956C9A4B294A70C700BDB870 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C9A4A294A70C700BDB870 /* TestViewController.swift */; };
 		95DDC11929491E5C00E26C36 /* DetailTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDC11829491E5C00E26C36 /* DetailTagCollectionViewCell.swift */; };
+		95FB9C48294D063C00DFA142 /* GamesFromSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB9C47294D063C00DFA142 /* GamesFromSearchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		956C9A47294A61CC00BDB870 /* GamesFromSameSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesFromSameSeriesModel.swift; sourceTree = "<group>"; };
 		956C9A4A294A70C700BDB870 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		95DDC11829491E5C00E26C36 /* DetailTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		95FB9C47294D063C00DFA142 /* GamesFromSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesFromSearchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			children = (
 				952F6404293F96A8008B0FD7 /* GameModel.swift */,
 				952F6406293FBD6F008B0FD7 /* GetGamesResponseModel.swift */,
+				95FB9C47294D063C00DFA142 /* GamesFromSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				954E0B742946340500E7E454 /* FavoritesListTableViewCell.swift in Sources */,
 				95DDC11929491E5C00E26C36 /* DetailTagCollectionViewCell.swift in Sources */,
 				952F640B293FCECD008B0FD7 /* GameClient.swift in Sources */,
+				95FB9C48294D063C00DFA142 /* GamesFromSearchModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

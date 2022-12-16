@@ -24,7 +24,6 @@ struct GameDetailModel: Codable {
     let ratings: [Rating]
     let reactions: [String: Int]
     let added: Int
-    let addedByStatus: AddedByStatus
     let playtime, screenshotsCount, moviesCount, creatorsCount: Int
     let achievementsCount, parentAchievementsCount: Int
     let redditURL: String
@@ -37,11 +36,7 @@ struct GameDetailModel: Codable {
     
     let reviewsCount: Int
     let saturatedColor, dominantColor: String
-    let parentPlatforms: [ParentPlatform]
-    let platforms: [PlatformElement]
-    let stores: [Store]
     let developers, genres, tags, publishers: [Developer]
-    let esrbRating: EsrbRating
     let descriptionRaw: String
 
     enum CodingKeys: String, CodingKey {
@@ -56,7 +51,6 @@ struct GameDetailModel: Codable {
         case website, rating
         case ratingTop = "rating_top"
         case ratings, reactions, added
-        case addedByStatus = "added_by_status"
         case playtime
         case screenshotsCount = "screenshots_count"
         case moviesCount = "movies_count"
@@ -82,9 +76,7 @@ struct GameDetailModel: Codable {
         case reviewsCount = "reviews_count"
         case saturatedColor = "saturated_color"
         case dominantColor = "dominant_color"
-        case parentPlatforms = "parent_platforms"
-        case platforms, stores, developers, genres, tags, publishers
-        case esrbRating = "esrb_rating"
+        case developers, genres, tags, publishers
        
         case descriptionRaw = "description_raw"
     }
@@ -99,13 +91,12 @@ struct Developer: Codable {
     let gamesCount: Int
     let imageBackground: String
     let domain: String?
-    let language: Language?
 
     enum CodingKeys: String, CodingKey {
         case id, name, slug
         case gamesCount = "games_count"
         case imageBackground = "image_background"
-        case domain, language
+        case domain
     }
 }
 
