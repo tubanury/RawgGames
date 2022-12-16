@@ -18,6 +18,7 @@ class FavoritesListViewController: BaseViewController {
     }
     
     private var viewModel = FavoritesListViewModel()
+    private var beforeSearchImage = PlaceHolderView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,29 @@ class FavoritesListViewController: BaseViewController {
         viewModel.getFavoriteGames()
         viewModel.getNotification(controller: self)
     }
+    
+     private func addPlaceHolderView(){
+         beforeSearchImage.translatesAutoresizingMaskIntoConstraints =  false
+         view.addSubview(beforeSearchImage)
+         
+         NSLayoutConstraint.activate([
+             beforeSearchImage.topAnchor.constraint(equalTo: view.topAnchor, constant:50),
+             beforeSearchImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+             beforeSearchImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+             beforeSearchImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+         ])
+     }
 
 }
 extension FavoritesListViewController: FavoriteListViewModelDelegate {
     func favoriteGamesChanged() {
-        self.favoritesListTableView.reloadData()
+        if viewModel.getFavoriteGameCount() > 0 {
+            beforeSearchImage.removeFromSuperview()
+            self.favoritesListTableView.reloadData()
+        }
+        else {
+            addPlaceHolderView()
+        }
     }
 }
 extension FavoritesListViewController: UITableViewDelegate, UITableViewDataSource {
