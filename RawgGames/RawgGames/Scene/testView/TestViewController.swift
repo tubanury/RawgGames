@@ -40,7 +40,7 @@ class TestViewController: UIViewController, UICollectionViewDataSource {
 }
 
 extension TestViewController: GameDetailViewModelDelegate {
-    func gameLoaded(isFavorite: Bool) {
+    func gameLoaded() {
         
     }
     

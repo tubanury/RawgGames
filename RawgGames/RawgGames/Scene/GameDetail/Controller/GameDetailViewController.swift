@@ -67,7 +67,7 @@ final class GameDetailViewController: BaseViewController {
 }
 
 extension GameDetailViewController: GameDetailViewModelDelegate {
-    func gameLoaded(isFavorite: Bool) {
+    func gameLoaded() {
         indicator.stopAnimating()
 
         gameNameLabel.text = viewModel.getGameName()
@@ -78,7 +78,7 @@ extension GameDetailViewController: GameDetailViewModelDelegate {
         }
         gameGenresLabel.text = viewModel.getGameGenres()
         gameDescription.text = viewModel.getGameDescription()
-        if isFavorite {
+        if viewModel.isGameFavorited() {
             favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
         }
         self.detailTagsCollectionView.reloadData()

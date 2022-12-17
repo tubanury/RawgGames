@@ -32,7 +32,7 @@ protocol GameDetailViewModelProtocol {
 }
 
 protocol GameDetailViewModelDelegate: AnyObject {
-    func gameLoaded(isFavorite: Bool)
+    func gameLoaded()
     func similarGamesLoaded()
     func sendNotification()
 }
@@ -50,8 +50,7 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
         GameClient.getGameDetail(gameId: id) { [weak self] gameDetail, error in
             guard let self = self else {return}
             self.game = gameDetail
-            let isFave = CoreDataManager.shared.isGameSaved(id: id).count > 0
-            self.delegate?.gameLoaded(isFavorite: isFave)
+            self.delegate?.gameLoaded()
         }
     }
     func fetchGamesFromSameSeries(id: Int) {
@@ -64,7 +63,9 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
     func fetchGamesFromSameDevelopers(){
         
     }
-    
+    func isGameFavorited() -> Bool{
+        return CoreDataManager.shared.isGameSaved(id: game?.id ?? 0).count > 0
+    }
     func getGameImageURL() -> URL? {
         URL(string: game?.backgroundImageAdditional ?? "")
     }

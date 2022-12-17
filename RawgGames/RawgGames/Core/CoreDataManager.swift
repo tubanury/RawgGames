@@ -9,14 +9,17 @@ import UIKit
 import CoreData
 
 final class CoreDataManager {
+    
+  
     static let shared = CoreDataManager()
+
     private let managedContext: NSManagedObjectContext!
     
     private init() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
     }
-    
+
     func saveNote(title: String, text: String) -> Note?{
         let entity = NSEntityDescription.entity(forEntityName: "Note", in: managedContext)!
         let note = NSManagedObject(entity: entity, insertInto: managedContext)
