@@ -21,6 +21,7 @@ final class GameDetailViewController: BaseViewController {
     @IBOutlet weak var moreGamesCollectionView: UICollectionView! {
         didSet {
             moreGamesCollectionView.dataSource = self
+            moreGamesCollectionView.delegate = self
         }
     }
     @IBOutlet weak var gameNameLabel: UILabel!
@@ -53,7 +54,7 @@ final class GameDetailViewController: BaseViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     @IBAction func didTappedBackButton(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func didAddFavoriteButtonTapped(_ sender: Any) {
@@ -87,6 +88,7 @@ extension GameDetailViewController: GameDetailViewModelDelegate {
     }
     func similarGamesLoaded() {
         self.moreGamesCollectionView.reloadData()
+        self.detailTagsCollectionView.reloadData()
     }
     
     func sendNotification(){
@@ -105,7 +107,9 @@ extension GameDetailViewController: GameDetailViewModelDelegate {
     }
 }
 
-extension GameDetailViewController: UICollectionViewDataSource {
+extension GameDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == detailTagsCollectionView {
             return 4
@@ -116,12 +120,12 @@ extension GameDetailViewController: UICollectionViewDataSource {
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView.tag == 1 {
+        if collectionView == detailTagsCollectionView {
             let cell = detailTagsCollectionView.dequeueReusableCell(withReuseIdentifier: "detailTagCollectionViewCell", for: indexPath) as! DetailTagCollectionViewCell
             cell.setup(rating: viewModel.getGameRating(), ratingCount: viewModel.getGameReviewCount(), year: viewModel.getGameReleaseYear(), developer: viewModel.getGameDeveloperName(), added: viewModel.getGameAddedCount(), index: indexPath.row)
             return cell
         }
-        if collectionView.tag == 2 {
+        if collectionView == moreGamesCollectionView {
             guard let cell = moreGamesCollectionView.dequeueReusableCell(withReuseIdentifier: "moreGamesCell", for: indexPath) as? MoreGamesCollectionViewCell,
                   let game = viewModel.getSimilarGame(at: indexPath.row) else {return UICollectionViewCell()}
             cell.configureCell(game: game)
@@ -131,5 +135,13 @@ extension GameDetailViewController: UICollectionViewDataSource {
         return UICollectionViewCell()
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameDetailViewController") as? GameDetailViewController else {return}
+        detailVC.gameId = viewModel.getSimilarGame(at: indexPath.row)?.id
+        self.navigationController!.pushViewController(detailVC, animated: true)
+    }
+    
+    
 }
 

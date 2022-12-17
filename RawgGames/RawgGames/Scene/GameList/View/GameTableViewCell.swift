@@ -21,12 +21,11 @@ final class GameTableViewCell: UITableViewCell {
     private let utilityQueue = DispatchQueue.global(qos: .utility)
     
     
-    
     func configureCell(game: GameModel){
         gameName.text = game.name
         gameGenre.text = game.genres.first?.name
         gameRating.setTitle(String(game.rating), for: .normal)
-        gameAdded.setTitle(String(game.added/1000)+"K", for: .normal)
+        gameAdded.setTitle(String(game.added/1000) + Localizables.thousandShortening.value, for: .normal)
         gameTag.setTitle(game.tags.first?.name, for: .normal)
 
         //guard let url = URL(string: game.backgroundImage) else {return}
@@ -71,10 +70,5 @@ final class GameTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         gameImage.image = nil
-        gameName.text = ""
-        gameGenre.text = ""
-        gameRating.setTitle("", for: .normal)
-        gameAdded.setTitle("", for: .normal)
-        gameTag.setTitle("", for: .normal)
     }
 }

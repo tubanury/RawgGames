@@ -14,15 +14,15 @@ import Foundation
 import Foundation
 
 // MARK: - FilteredGamesModel
-struct FilteredGamesModel {
+struct FilteredGamesModel: Decodable {
     let count: Int
     //let next, previous: JSONNull?
     let results: [Result]
 }
 
 // MARK: - Result
-struct Result {
-    /*let id: Int
+struct Result: Decodable {
+    let id: Int
     let slug, name, released: String
     let tba: Bool
     let backgroundImage: String
@@ -30,20 +30,13 @@ struct Result {
     let ratingTop: Int
     let ratings: [Rating]
     let ratingsCount, reviewsTextCount, added: Int
-    let addedByStatus: AddedByStatus
     let metacritic: Int?
     let playtime, suggestionsCount: Int
     let updated: String
-    let userGame: JSONNull?
     let reviewsCount: Int
     let saturatedColor, dominantColor: String
-    let platforms: [PlatformElement]
-    let parentPlatforms: [ParentPlatform]
     let genres: [Genre]
-    let stores: [Store]
-    let clip: JSONNull?
     let tags: [Genre]
-    let esrbRating: EsrbRating
     let shortScreenshots: [ShortScreenshot]
 
     enum CodingKeys: String, CodingKey {
@@ -55,20 +48,15 @@ struct Result {
         case ratingsCount = "ratings_count"
         case reviewsTextCount = "reviews_text_count"
         case added
-        case addedByStatus = "added_by_status"
         case metacritic, playtime
         case suggestionsCount = "suggestions_count"
         case updated
-        case userGame = "user_game"
         case reviewsCount = "reviews_count"
         case saturatedColor = "saturated_color"
         case dominantColor = "dominant_color"
-        case platforms
-        case parentPlatforms = "parent_platforms"
-        case genres, stores, clip, tags
-        case esrbRating = "esrb_rating"
+        case genres, tags
         case shortScreenshots = "short_screenshots"
-    }*/
+    }
 }
 /*
 // MARK: - Platform

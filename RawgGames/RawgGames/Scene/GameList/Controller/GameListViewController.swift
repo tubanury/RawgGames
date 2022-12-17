@@ -78,11 +78,16 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell,
-              let game = viewModel.getGame(at: indexPath.row) else {return UITableViewCell()}
+        var cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell
+        cell = nil
+           if cell == nil {
+               cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell
+        }
+       // guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell,
+        guard let game = viewModel.getGame(at: indexPath.row) else {return UITableViewCell()}
         
-        cell.configureCell(game: game)
-        return cell
+        cell?.configureCell(game: game)
+        return cell ?? UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameDetailViewController") as? GameDetailViewController else {return}
