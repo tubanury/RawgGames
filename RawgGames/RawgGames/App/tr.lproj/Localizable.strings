@@ -5,3 +5,14 @@
   Created by Tuba N. Yıldız on 12.12.2022.
   
 */
+
+"browseGames" = "Oyun Ara!";
+"favoritesPlaceHolderTitle" = "Burada hiç favori oyun yok.";
+"thousandShortening" = "B";
+"reviews" = "yorumlar";
+"released" = "Yayınlanma";
+"downloads" = "İndirmeler";
+"developers" = "Geliştiriciler";
+"unknown" = "Bilinmiyor";
+"noDescription" = "Açıklama yok.";
+"search" = "ara...";

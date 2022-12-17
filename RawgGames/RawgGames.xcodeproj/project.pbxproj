@@ -43,6 +43,7 @@
 		954E0B712946077C00E7E454 /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */; };
 		954E0B742946340500E7E454 /* FavoritesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B732946340500E7E454 /* FavoritesListTableViewCell.swift */; };
 		955D2375294D314600851E59 /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D2374294D314600851E59 /* PlaceHolderView.swift */; };
+		955D2378294DD07800851E59 /* Localizables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D2377294DD07800851E59 /* Localizables.swift */; };
 		956C9A46294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C9A45294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift */; };
 		956C9A48294A61CC00BDB870 /* GamesFromSameSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C9A47294A61CC00BDB870 /* GamesFromSameSeriesModel.swift */; };
 		956C9A4B294A70C700BDB870 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C9A4A294A70C700BDB870 /* TestViewController.swift */; };
@@ -107,6 +108,9 @@
 		954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
 		954E0B732946340500E7E454 /* FavoritesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListTableViewCell.swift; sourceTree = "<group>"; };
 		955D2374294D314600851E59 /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
+		955D2377294DD07800851E59 /* Localizables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizables.swift; sourceTree = "<group>"; };
+		955D2379294DD48900851E59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		955D237A294DD48B00851E59 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		956C9A45294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreGamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		956C9A47294A61CC00BDB870 /* GamesFromSameSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesFromSameSeriesModel.swift; sourceTree = "<group>"; };
 		956C9A4A294A70C700BDB870 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		950E7D0C2947A13F00F2D3DE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				955D2376294DD06500851E59 /* Localizables */,
 				951059A9294BC88100CFD9AD /* Extensions */,
 			);
 			path = Utilities;
@@ -437,6 +442,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		955D2376294DD06500851E59 /* Localizables */ = {
+			isa = PBXGroup;
+			children = (
+				955D2377294DD07800851E59 /* Localizables.swift */,
+			);
+			path = Localizables;
+			sourceTree = "<group>";
+		};
 		956C9A49294A709800BDB870 /* testView */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +612,7 @@
 			files = (
 				950E7D0E2947A15000F2D3DE /* String+Extensions.swift in Sources */,
 				952F6403293F9673008B0FD7 /* GameTableViewCell.swift in Sources */,
+				955D2378294DD07800851E59 /* Localizables.swift in Sources */,
 				952F641B2941E866008B0FD7 /* GameDetailViewModel.swift in Sources */,
 				951059A8294BC7E900CFD9AD /* CALayer+Extensions.swift in Sources */,
 				954E0B672943E20F00E7E454 /* AddNoteViewController.swift in Sources */,
@@ -677,6 +691,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				952F63CD293F8F9E008B0FD7 /* Base */,
+				955D2379294DD48900851E59 /* en */,
+				955D237A294DD48B00851E59 /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

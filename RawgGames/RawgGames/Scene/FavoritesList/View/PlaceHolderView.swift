@@ -41,7 +41,7 @@ class PlaceHolderView: UIView {
         let temp = UILabel()
         temp.translatesAutoresizingMaskIntoConstraints =  false
         temp.font = UIFont(name: "Futura", size: 15)
-        temp.text = "Burada hiç favori oyun yok."
+        temp.text = Localizables.favoritesPlaceHolderTitle.value
         return temp
         
     }()

@@ -1,4 +1,6 @@
 
+"gsY-Aq-Z93" = "Favorite Games";
+
 /* Class = "UITabBarItem"; title = "Notes"; ObjectID = "7O2-Nb-uiX"; */
 "7O2-Nb-uiX.title" = "Notes";
 
@@ -9,7 +11,7 @@
 "Eu5-cx-fuI.title" = "Favorites";
 
 /* Class = "UIBarButtonItem"; title = "Games"; ObjectID = "GhA-ED-psv"; */
-"GhA-ED-psv.title" = "Games";
+"VLL-A6-w2u.title" = "Games";
 
 /* Class = "UITabBarItem"; title = "Games"; ObjectID = "IsN-2C-OAg"; */
 "IsN-2C-OAg.title" = "Games";

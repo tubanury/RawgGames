@@ -1,30 +1,32 @@
 
+"gsY-Aq-Z93.title" = "Favori Oyunların";
+
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "7O2-Nb-uiX"; */
-"7O2-Nb-uiX.title" = "Oyunlar";
+"7O2-Nb-uiX.title" = "Notlar";
 
 /* Class = "UITextField"; placeholder = "Enter season info"; ObjectID = "CKb-dJ-nSS"; */
-"CKb-dJ-nSS.placeholder" = "Enter season info";
+"CKb-dJ-nSS.placeholder" = "Oyun ismi gir";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "Eu5-cx-fuI"; */
 "Eu5-cx-fuI.title" = "Favoriler";
 
 /* Class = "UIBarButtonItem"; title = "Games"; ObjectID = "GhA-ED-psv"; */
-"GhA-ED-psv.title" = "Games";
+"VLL-A6-w2u.title" = "Oyunlar";
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "IsN-2C-OAg"; */
 "IsN-2C-OAg.title" = "Notlar";
 
 /* Class = "UILabel"; text = "And Your Note.."; ObjectID = "KMq-Q2-g83"; */
-"KMq-Q2-g83.text" = "And Your Note..";
+"KMq-Q2-g83.text" = "Notunuz..";
 
 /* Class = "UILabel"; text = "Game"; ObjectID = "L2t-p7-ras"; */
-"L2t-p7-ras.text" = "Game";
+"L2t-p7-ras.text" = "Oyun";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "Q2t-qu-k09"; */
 "Q2t-qu-k09.text" = "Title";
 
 /* Class = "UIButton"; configuration.title = "Save"; ObjectID = "VCl-rq-S6F"; */
-"VCl-rq-S6F.configuration.title" = "Save";
+"VCl-rq-S6F.configuration.title" = "Kaydet";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VCl-rq-S6F"; */
 "VCl-rq-S6F.normalTitle" = "Button";

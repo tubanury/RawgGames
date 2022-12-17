@@ -42,13 +42,13 @@ class GameListViewController: BaseViewController {
         
         search.hidesNavigationBarDuringPresentation = false
         search.searchBar.tintColor = .white
-        search.searchBar.placeholder = "search...".localized()
+        search.searchBar.placeholder = Localizables.search.value
         search.searchBar.barTintColor = .white
         self.definesPresentationContext = true
         self.navigationItem.searchController = search
         self.navigationController?.navigationBar.prefersLargeTitles = true
 
-        self.navigationItem.title = "Start Playing!"
+        self.navigationItem.title = Localizables.browseGames.value
        
         self.navigationItem.titleView?.tintColor = .white
        
