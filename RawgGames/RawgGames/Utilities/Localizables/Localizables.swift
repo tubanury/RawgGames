@@ -30,7 +30,8 @@ enum Localizables: String, GenericValueProtocol{
     case noDescription = "noDescription"
     case search = "search"
     case browseGames = "browseGames"
+    case tryAgain = "tryAgain"
+    case warning = "warning"
+    case emptyNoteMessage = "emptyNoteMessage"
 
-    
-    
 }

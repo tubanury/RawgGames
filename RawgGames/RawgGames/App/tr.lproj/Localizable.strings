@@ -16,3 +16,6 @@
 "unknown" = "Bilinmiyor";
 "noDescription" = "Açıklama yok.";
 "search" = "ara...";
+"tryAgain" = "Tekrar Dene";
+"warning" = "Uyarı!";
+"emptyNoteMessage" = "Not metni veya ismi boş olamaz.";

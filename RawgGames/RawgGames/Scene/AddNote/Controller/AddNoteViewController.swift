@@ -24,7 +24,7 @@ class AddNoteViewController: BaseViewController {
     
     @IBAction func didSaveButtonTapped(_ sender: Any) {
         if self.noteText.text == "" || self.noteTitle.text == "" {
-            presentAlert(title: "Warning!", message: "Note text or title can not be empty.")
+            presentAlert(title: Localizables.warning.value, message: Localizables.emptyNoteMessage.value)
             return
         }
         if let note = viewModel.note{
