@@ -10,6 +10,7 @@ import Foundation
 
 import Foundation
 import Alamofire
+import UIKit
 
 final class GameClient {
     static let BASE_URL = "https://api.rawg.io/api/"
@@ -70,4 +71,21 @@ final class GameClient {
             }
         }
     }
+    
+    static func fetchImage(withUrlString urlString: String, completion: @escaping(UIImage)->()){
+        print(urlString)
+        guard let url  = URL(string: urlString) else {return}
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error =  error {
+                print ("fetchin image error", error.localizedDescription)
+                return
+            }
+            
+            guard let data  = data  else {return}
+            guard let image = UIImage(data: data) else {return}
+            
+            completion(image)
+        }.resume()
+    }
+    
 }

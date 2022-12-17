@@ -47,11 +47,8 @@ class GameListViewController: BaseViewController {
         self.definesPresentationContext = true
         self.navigationItem.searchController = search
         self.navigationController?.navigationBar.prefersLargeTitles = true
-
         self.navigationItem.title = Localizables.browseGames.value
-       
         self.navigationItem.titleView?.tintColor = .white
-       
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
@@ -63,7 +60,6 @@ class GameListViewController: BaseViewController {
     @objc func didPullToRefresh(){
         viewModel.fetchGames()
     }
-    
 }
 
 extension GameListViewController: GameListViewModelDelegate {

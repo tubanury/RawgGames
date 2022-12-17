@@ -12,7 +12,6 @@ protocol GenericValueProtocol{
     var value: value {get}
 }
 
-
 enum Localizables: String, GenericValueProtocol{
     typealias value = String
     
