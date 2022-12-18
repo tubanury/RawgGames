@@ -88,21 +88,6 @@ extension GameDetailViewController: GameDetailViewModelDelegate {
         self.moreGamesCollectionView.reloadData()
         self.detailTagsCollectionView.reloadData()
     }
-    
-    func sendNotification(){
-        let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = "Recently added new favorite games."
-        notificationContent.body = "Did you play your new fave games? Check it out!"
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        let request = UNNotificationRequest(identifier: "FavoritesNotification", content: notificationContent, trigger: trigger)
-        
-        viewModel.userNotificationCenter.add(request){ error in
-            if let _ = error {
-                //todo: handle error
-            }
-        }
-    }
 }
 
 extension GameDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {

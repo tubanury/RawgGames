@@ -21,3 +21,5 @@
 "emptyNoteMessage" = "Not metni veya ismi boş olamaz.";
 "highestRating" = "En Yüksek Puan";
 "mostReviewed" = "En Çok Değerlendirilenler";
+"favoritesNotificationTitle" = "Yeni Favoriler Ekledin.";
+"favoritesNotificationBody" = "Favori oyunlarını oynadın mı? ";

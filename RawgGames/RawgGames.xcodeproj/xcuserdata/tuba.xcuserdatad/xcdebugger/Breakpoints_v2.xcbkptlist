@@ -373,22 +373,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A7544AF6-43B0-46E8-B1C0-10E03114E905"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "sendNotification()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A5C5F5A4-2227-4748-A8E4-61F2474BDA2E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -444,8 +428,8 @@
             filePath = "RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "getGameRating()"
             landmarkType = "7">
          </BreakpointContent>
@@ -476,8 +460,8 @@
             filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -492,8 +476,8 @@
             filePath = "RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "getSimilarGamesCount()"
             landmarkType = "7">
          </BreakpointContent>
@@ -588,8 +572,8 @@
             filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -604,8 +588,8 @@
             filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -620,8 +604,8 @@
             filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -636,8 +620,8 @@
             filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -652,8 +636,8 @@
             filePath = "RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "getSimilarGame(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -668,8 +652,8 @@
             filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -684,8 +668,8 @@
             filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
             <Locations>
@@ -732,8 +716,8 @@
             filePath = "RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "fetchGameDetail(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -748,8 +732,8 @@
             filePath = "RawgGames/Scene/GameDetail/Controller/GameDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -876,8 +860,8 @@
             filePath = "RawgGames/Scene/GameList/Controller/GameListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -892,8 +876,8 @@
             filePath = "RawgGames/Scene/GameList/Controller/GameListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -908,8 +892,8 @@
             filePath = "RawgGames/Scene/GameList/Controller/GameListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -924,8 +908,8 @@
             filePath = "RawgGames/Scene/GameList/Controller/GameListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -972,8 +956,8 @@
             filePath = "RawgGames/Scene/GameList/ViewModel/GameListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "fetchGamesBySearchText(searchText:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1020,8 +1004,8 @@
             filePath = "RawgGames/Scene/GameList/ViewModel/GameListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "fetchGames()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1036,8 +1020,8 @@
             filePath = "RawgGames/Scene/GameList/Controller/GameListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "didPullToRefresh()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1052,8 +1036,8 @@
             filePath = "RawgGames/Scene/GameList/ViewModel/GameListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "fetchGames()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1068,8 +1052,8 @@
             filePath = "RawgGames/Scene/GameList/ViewModel/GameListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "fetchGames()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1258,8 +1242,8 @@
             filePath = "RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "fetchGamesFromSameSeries(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1290,8 +1274,8 @@
             filePath = "RawgGames/Scene/GameDetail/ViewModel/GameDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "fetchGameDetail(id:)"
             landmarkType = "7">
          </BreakpointContent>

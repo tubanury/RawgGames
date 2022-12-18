@@ -20,3 +20,5 @@
 "emptyNoteMessage" = "Note text or title can not be empty.";
 "highestRating" = "Highest Rating";
 "mostReviewed" = "Most Reviewed";
+"favoritesNotificationTitle" = "Recently added new favorite games.";
+"favoritesNotificationBody" = "Did you play your new fave games? Check it out!";

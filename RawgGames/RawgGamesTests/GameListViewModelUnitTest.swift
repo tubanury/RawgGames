@@ -47,6 +47,8 @@ final class GameListViewModelUnitTest: XCTestCase {
 }
 
 extension GameListViewModelUnitTest: GameListViewModelDelegate {
+    func gamesFailed() {}
+    
     func gamesLoaded() {
         fetchExpectetiton.fulfill()
     }

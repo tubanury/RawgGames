@@ -64,7 +64,4 @@ extension GameDetailViewModelUnitTest: GameDetailViewModelDelegate {
     
     func similarGamesLoaded() {}
     
-    func sendNotification() {}
-    
-    
 }

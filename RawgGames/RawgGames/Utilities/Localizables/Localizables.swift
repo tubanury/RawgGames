@@ -34,4 +34,7 @@ enum Localizables: String, GenericValueProtocol{
     case emptyNoteMessage = "emptyNoteMessage"
     case highestRating = "highestRating"
     case mostReviewed = "mostReviewed"
+    case favoritesNotificationTitle = "favoritesNotificationTitle"
+    case favoritesNotificationBody = "favoritesNotificationBody"
+
 }

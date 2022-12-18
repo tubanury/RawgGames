@@ -32,7 +32,8 @@ class GameListViewController: BaseViewController {
         search.searchBar.delegate = self
         indicator.startAnimating()
         viewModel.fetchGames()
-        viewModel.requestNotificationAuthorization()
+        //viewModel.requestNotificationAuthorization()
+        LocalNotificationManager.shared.requestNotificationAuthorization()
         gameListTableView.refreshControl = UIRefreshControl()
         gameListTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
        

@@ -7,9 +7,7 @@
 
 import Foundation
 import UIKit
-import UserNotifications
 
-typealias CompletionHandler = (_ success:Bool) -> Void
 
 protocol GameDetailViewModelProtocol {
     var delegate: GameDetailViewModelDelegate? {get set}
@@ -34,7 +32,6 @@ protocol GameDetailViewModelProtocol {
 protocol GameDetailViewModelDelegate: AnyObject {
     func gameLoaded()
     func similarGamesLoaded()
-    func sendNotification()
 }
 
 final class GameDetailViewModel: GameDetailViewModelProtocol {
@@ -42,9 +39,7 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
     weak var delegate: GameDetailViewModelDelegate?
     private var game: GameDetailModel?
     private var similarGames: [GameModel]?
-    let userNotificationCenter =  UNUserNotificationCenter.current()
     
-    let imageProcessingQueue = DispatchQueue(label: "imageProcessingQueue", attributes: DispatchQueue.Attributes.concurrent)
     
     func fetchGameDetail(id: Int) {
         GameClient.getGameDetail(gameId: id) { [weak self] gameDetail, error in
@@ -98,18 +93,18 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
     }
     
     func getGameReleaseYear() -> String {
-        game?.released.components(separatedBy: "-").first ?? "Unknown"
+        game?.released.components(separatedBy: "-").first ?? Localizables.unknown.value
     }
     
     func getGameDeveloperName() -> String {
-        game?.developers.first?.name.components(separatedBy: " ").first ?? "Unknown"
+        game?.developers.first?.name.components(separatedBy: " ").first ?? Localizables.unknown.value
     }
     
     func getGameAddedCount() -> Int {
         game?.added ?? 0
     }
     func getGameDescription() -> String {
-        game?.descriptionRaw ?? "No Description"
+        game?.descriptionRaw ?? Localizables.noDescription.value
     }
     
     func getSimilarGames() -> [GameModel]? {
@@ -128,7 +123,6 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
         if CoreDataManager.shared.isGameSaved(id: game.id).count > 0{
             CoreDataManager.shared.deleteGame(game: CoreDataManager.shared.isGameSaved(id: game.id).first!)
             NotificationCenter.default.post(name: NSNotification.Name("buttonPressedNotification"), object: "save button")
-            self.delegate?.sendNotification()
             return false
         }
         else {
@@ -136,7 +130,7 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
             guard CoreDataManager.shared.saveGame(id: game.id , name: game.name , tag: game.tags.first?.name ?? "", img: imageData) != nil else {return false}
            
             NotificationCenter.default.post(name: NSNotification.Name("buttonPressedNotification"), object: "save button")
-            self.delegate?.sendNotification()
+            LocalNotificationManager.shared.sendNotification(title: Localizables.favoritesNotificationTitle.value, body: Localizables.favoritesNotificationBody.value)
             return true
         }
     }
