@@ -29,12 +29,10 @@ final class GameTableViewCell: UITableViewCell {
         gameTag.setTitle(game.tags.first?.name, for: .normal)
 
         if let cachedImage = self.cache.object(forKey: game.id as NSNumber) {
-                   print("Using a cached image for item: \(game.id)")
-                self.gameImage.image = cachedImage
+            self.gameImage.image = cachedImage
         } else {
             self.loadImage(game: game) { [weak self] (image) in
                guard let self = self, let image = image else { return }
-               
                self.gameImage.image = image
                self.cache.setObject(image, forKey: game.id as NSNumber)
            }

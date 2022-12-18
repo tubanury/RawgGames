@@ -36,7 +36,8 @@ enum Localizables: String, GenericValueProtocol{
     case mostReviewed = "mostReviewed"
     case favoritesNotificationTitle = "favoritesNotificationTitle"
     case favoritesNotificationBody = "favoritesNotificationBody"
-    case gameNotFound = "gameNotFound";
+    case gameNotFound = "gameNotFound"
     case error = "error"
+    case coreDataFailed = "coreDataFailed"
 
 }

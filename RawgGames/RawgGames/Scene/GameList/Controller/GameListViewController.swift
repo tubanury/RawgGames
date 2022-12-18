@@ -10,8 +10,8 @@ import UIKit
 class GameListViewController: BaseViewController {
     
     lazy var search = UISearchController(searchResultsController: nil)
-    var picker  = UIPickerView()
-    var toolBar = UIToolbar()
+    private var picker  = UIPickerView()
+    private var toolBar = UIToolbar()
     var pickerValues = [Localizables.highestRating.value, Localizables.mostReviewed.value]
     
     @IBOutlet weak var sortButtonItem: UIBarButtonItem!
@@ -42,23 +42,7 @@ class GameListViewController: BaseViewController {
         configureView()
     }
     
-    func setupMenu() {
-        let add = UIAction(title: "", image: UIImage(systemName: "plus")) { (action) in
-            print("Add")
-        }
-        let edit = UIAction(title: "Edit", image: UIImage(systemName: "pencil")) { (action) in
-            print("Edit")
-        }
-        let delete = UIAction(title: "Delete", image: UIImage(systemName: "minus"), attributes: .destructive) { (action) in
-            print("Delete")
-        }
-     
-        let menu = UIMenu(children: [add, edit, delete])
-        sortButtonItem.menu = menu
-    }
-    
-    func configureView(){
-        //setupMenu()
+    private func configureView(){
         search.hidesNavigationBarDuringPresentation = false
         search.searchBar.tintColor = .white
         search.searchBar.placeholder = Localizables.search.value
@@ -77,21 +61,25 @@ class GameListViewController: BaseViewController {
         self.navigationController?.navigationBar.standardAppearance = appearance;
         self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
     }
+    private func configurePickerView(){
+        picker = UIPickerView.init()
+       picker.delegate = self
+       picker.dataSource = self
+       picker.backgroundColor = UIColor.white
+       picker.setValue(UIColor.black, forKey: "textColor")
+       picker.autoresizingMask = .flexibleWidth
+       picker.contentMode = .center
+       picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+       self.view.addSubview(picker)
+               
+       toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+       toolBar.items = [UIBarButtonItem.init(title: "Select", style: .done, target: self, action: #selector(onPickerSelectButtonTapped))]
+       self.view.addSubview(toolBar)
+    }
+    
     
     @IBAction func didSortButtonTapped(_ sender: Any) {
-        picker = UIPickerView.init()
-           picker.delegate = self
-           picker.dataSource = self
-           picker.backgroundColor = UIColor.white
-           picker.setValue(UIColor.black, forKey: "textColor")
-           picker.autoresizingMask = .flexibleWidth
-           picker.contentMode = .center
-           picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
-           self.view.addSubview(picker)
-                   
-           toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
-           toolBar.items = [UIBarButtonItem.init(title: "Select", style: .done, target: self, action: #selector(onPickerSelectButtonTapped))]
-           self.view.addSubview(toolBar)
+        configurePickerView()
     
     }
     @objc func didPullToRefresh(){
@@ -104,7 +92,7 @@ class GameListViewController: BaseViewController {
         sortList(by: picker.selectedRow(inComponent: 0))
     }
     
-    func sortList(by: Int) {
+    private func sortList(by: Int) {
         viewModel.sortGames(by: by)
     }
 }
@@ -131,16 +119,12 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell
-        cell = nil
-           if cell == nil {
-               cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell
-        }
-       // guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell,
-        guard let game = viewModel.getGame(at: indexPath.row) else {return UITableViewCell()}
+       
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell,
+             let game = viewModel.getGame(at: indexPath.row) else {return UITableViewCell()}
         
-        cell?.configureCell(game: game)
-        return cell ?? UITableViewCell()
+        cell.configureCell(game: game)
+        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameDetailViewController") as? GameDetailViewController else {return}

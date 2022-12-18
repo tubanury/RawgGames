@@ -25,3 +25,4 @@
 "favoritesNotificationBody" = "Favori oyunlarını oynadın mı? ";
 "gameNotFound" = "Game not found :(";
 "error" = "Error";
+"coreDataFailed" = "Değişiklikler kaydedilirken bir hata oldu";

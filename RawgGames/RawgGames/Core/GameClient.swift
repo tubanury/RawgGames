@@ -39,7 +39,6 @@ final class GameClient {
     static func getGamesBySearchText(searchText: String, completion: @escaping ([GameModel]?, Error?) -> Void) {
         guard let encodedString = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         let urlString = BASE_URL + "games?search=" + encodedString + "&ordering=-rating" + "&key=" + Constants.API_KEY
-        print(urlString)
         handleResponse(urlString: urlString, responseType: GetGamesResponseModel.self) { responseModel, error in
             completion(responseModel?.results, error)
         }
@@ -70,11 +69,9 @@ final class GameClient {
     }
     
     static func fetchImage(withUrlString urlString: String, completion: @escaping(UIImage)->()){
-        print(urlString)
         guard let url  = URL(string: urlString) else {return}
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error =  error {
-                print ("fetchin image error", error.localizedDescription)
                 return
             }
             

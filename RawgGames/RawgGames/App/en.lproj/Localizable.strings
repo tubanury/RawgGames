@@ -24,3 +24,5 @@
 "favoritesNotificationBody" = "Did you play your new fave games? Check it out!";
 "gameNotFound" = "Aradığın oyunu bulamadık :(";
 "error" = "Hata";
+"coreDataFailed" = "Some error ocured while saving";
+

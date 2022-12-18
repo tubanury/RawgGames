@@ -52,9 +52,6 @@ final class FavoritesListViewModel: FavoritesListViewModelProtocol {
     }
     
     @objc func handleButton(_ notification: Notification){
-        if let text = notification.object as? String {
-            print(text)
-        }
         self.getFavoriteGames()
     }
 }

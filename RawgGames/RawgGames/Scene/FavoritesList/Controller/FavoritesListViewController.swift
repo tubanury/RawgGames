@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class FavoritesListViewController: BaseViewController {
+final class FavoritesListViewController: BaseViewController {
 
     @IBOutlet weak var favoritesListTableView: UITableView!{
         didSet {
@@ -62,7 +62,6 @@ extension FavoritesListViewController: UITableViewDelegate, UITableViewDataSourc
         cell.configureCell(game: game)
         cell.favoriteBtn = { [unowned self] in
             viewModel.deleteGame(at: indexPath.row)
-            //tableView.deleteRows(at: [indexPath], with: .fade)
         }
         return cell
     }

@@ -18,7 +18,6 @@ class AddNoteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        viewModel.delegate = self
         configureView()
     }
     
@@ -45,10 +44,6 @@ class AddNoteViewController: BaseViewController {
     }
     
     
-}
-extension AddNoteViewController: AddNoteViewModelDelegate {
-    func noteInformationsLoaded() {
-    }
 }
 
 

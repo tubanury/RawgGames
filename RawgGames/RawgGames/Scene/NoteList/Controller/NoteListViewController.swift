@@ -32,7 +32,6 @@ class NoteListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "toAddEdit" {
             let destination = segue.destination as! AddNoteViewController
-
             destination.viewModel.delegateNoteList = self
             guard let sender else {return}
             destination.viewModel.note = sender as? Note

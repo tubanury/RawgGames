@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlaceHolderView: UIView {
+final class PlaceHolderView: UIView {
 
     private lazy var containerView: UIView = {
        let temp = UIView()

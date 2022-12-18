@@ -25,13 +25,12 @@ class CoreDataManager {
         let note = NSManagedObject(entity: entity, insertInto: managedContext)
         note.setValue(title, forKeyPath: "noteTitle")
         note.setValue(text, forKeyPath: "noteText")
-
         
         do {
             try managedContext.save()
             return note as? Note
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+        } catch _ as NSError {
+            
         }
         
         return nil
@@ -42,8 +41,7 @@ class CoreDataManager {
         do {
             let notes = try managedContext.fetch(fetchRequest)
             return notes as! [Note]
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+        } catch _ as NSError {
         }
         return []
     }
@@ -53,8 +51,7 @@ class CoreDataManager {
         
         do {
             try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+        } catch _ as NSError {
         }
     }
     
@@ -64,8 +61,7 @@ class CoreDataManager {
         if note.hasChanges {
             do {
                 try managedContext.save()
-            } catch let error as NSError {
-                print("Could not save. \(error), \(error.userInfo)")
+            } catch _ as NSError {
             }
             return note
         }
@@ -77,8 +73,7 @@ class CoreDataManager {
         do {
             let games = try managedContext.fetch(fetchRequest)
             return games as! [Game]
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+        } catch _ as NSError {
         }
         return []
     }
@@ -89,8 +84,7 @@ class CoreDataManager {
         do {
             let games = try managedContext.fetch(fetchRequest)
             return games as! [Game]
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+        } catch _ as NSError {
         }
         return []
     }
@@ -106,8 +100,7 @@ class CoreDataManager {
         do {
             try managedContext.save()
             return game as? Game
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+        } catch _ as NSError {
         }
     
         return nil
@@ -118,8 +111,7 @@ class CoreDataManager {
         managedContext.delete(game)
         do {
             try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+        } catch _ as NSError {
         }
     }
     

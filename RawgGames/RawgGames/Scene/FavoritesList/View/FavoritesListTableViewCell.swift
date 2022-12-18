@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesListTableViewCell: UITableViewCell {
+final class FavoritesListTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var gameImage: UIImageView!
     
