@@ -32,5 +32,6 @@ enum Localizables: String, GenericValueProtocol{
     case tryAgain = "tryAgain"
     case warning = "warning"
     case emptyNoteMessage = "emptyNoteMessage"
-
+    case highestRating = "highestRating"
+    case mostReviewed = "mostReviewed"
 }

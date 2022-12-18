@@ -19,3 +19,5 @@
 "tryAgain" = "Tekrar Dene";
 "warning" = "Uyarı!";
 "emptyNoteMessage" = "Not metni veya ismi boş olamaz.";
+"highestRating" = "En Yüksek Puan";
+"mostReviewed" = "En Çok Değerlendirilenler";

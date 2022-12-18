@@ -39,7 +39,6 @@ final class GameDetailViewController: BaseViewController {
         guard let id  = gameId else {return}
         viewModel.delegate = self
         indicator.startAnimating()
-
         viewModel.fetchGamesFromSameSeries(id: id)
         viewModel.fetchGameDetail(id: id)
         
@@ -70,7 +69,6 @@ final class GameDetailViewController: BaseViewController {
 extension GameDetailViewController: GameDetailViewModelDelegate {
     func gameLoaded() {
         indicator.stopAnimating()
-
         gameNameLabel.text = viewModel.getGameName()
         guard let url = viewModel.getGameImageURL() else {return}
         gameImageView.af.setImage(withURL: url)

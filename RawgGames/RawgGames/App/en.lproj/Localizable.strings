@@ -18,3 +18,5 @@
 "tryAgain" = "Try Again";
 "warning" = "Warning!";
 "emptyNoteMessage" = "Note text or title can not be empty.";
+"highestRating" = "Highest Rating";
+"mostReviewed" = "Most Reviewed";

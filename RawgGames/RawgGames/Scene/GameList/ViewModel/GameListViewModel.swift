@@ -45,11 +45,22 @@ final class GameListViewModel: GameListViewModelProtocol {
             if let _ =  error {
                 //self.delegate?.gamesFailed()
             }
-            print(searchGames)
             self.games = searchGames
             self.delegate?.gamesLoaded()
         }
         
+    }
+    
+    func sortGames(by: Int) {
+        switch by{
+        case 0:
+            self.games = games?.sorted() { $0.rating > $1.rating }
+        case 1:
+            self.games = games?.sorted() { $0.ratingsCount > $1.ratingsCount }
+        default:
+            self.games = games?.sorted() { $0.ratingsCount > $1.ratingsCount }
+        }
+        self.delegate?.gamesLoaded()
     }
     
     func getGameCount() -> Int {

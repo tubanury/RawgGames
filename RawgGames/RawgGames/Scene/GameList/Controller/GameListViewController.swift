@@ -10,8 +10,12 @@ import UIKit
 class GameListViewController: BaseViewController {
     
     lazy var search = UISearchController(searchResultsController: nil)
-
-
+    var picker  = UIPickerView()
+    var toolBar = UIToolbar()
+    var pickerValues = [Localizables.highestRating.value, Localizables.mostReviewed.value]
+    
+    @IBOutlet weak var sortButtonItem: UIBarButtonItem!
+    
     @IBOutlet weak var gameListTableView: UITableView!{
         didSet {
             gameListTableView.delegate = self
@@ -38,12 +42,29 @@ class GameListViewController: BaseViewController {
         configureView()
     }
     
+    func setupMenu() {
+        let add = UIAction(title: "", image: UIImage(systemName: "plus")) { (action) in
+            print("Add")
+        }
+        let edit = UIAction(title: "Edit", image: UIImage(systemName: "pencil")) { (action) in
+            print("Edit")
+        }
+        let delete = UIAction(title: "Delete", image: UIImage(systemName: "minus"), attributes: .destructive) { (action) in
+            print("Delete")
+        }
+     
+        let menu = UIMenu(children: [add, edit, delete])
+        sortButtonItem.menu = menu
+    }
+    
     func configureView(){
-        
+        //setupMenu()
         search.hidesNavigationBarDuringPresentation = false
         search.searchBar.tintColor = .white
         search.searchBar.placeholder = Localizables.search.value
         search.searchBar.barTintColor = .white
+        
+
         self.definesPresentationContext = true
         self.navigationItem.searchController = search
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -57,8 +78,34 @@ class GameListViewController: BaseViewController {
         self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
     }
     
+    @IBAction func didSortButtonTapped(_ sender: Any) {
+        picker = UIPickerView.init()
+           picker.delegate = self
+           picker.dataSource = self
+           picker.backgroundColor = UIColor.white
+           picker.setValue(UIColor.black, forKey: "textColor")
+           picker.autoresizingMask = .flexibleWidth
+           picker.contentMode = .center
+           picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+           self.view.addSubview(picker)
+                   
+           toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+           toolBar.items = [UIBarButtonItem.init(title: "Select", style: .done, target: self, action: #selector(onPickerSelectButtonTapped))]
+           self.view.addSubview(toolBar)
+    
+    }
     @objc func didPullToRefresh(){
         viewModel.fetchGames()
+    }
+    
+    @objc func onPickerSelectButtonTapped() {
+        toolBar.removeFromSuperview()
+        picker.removeFromSuperview()
+        sortList(by: picker.selectedRow(inComponent: 0))
+    }
+    
+    func sortList(by: Int) {
+        viewModel.sortGames(by: by)
     }
 }
 
@@ -104,5 +151,25 @@ extension GameListViewController: UISearchBarDelegate {
         indicator.startAnimating()
         viewModel.fetchGamesBySearchText(searchText: text)
     }
+}
+
+extension GameListViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerValues[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+       // print(pickerValues[row])
+    }
+    
+    
 }
 
