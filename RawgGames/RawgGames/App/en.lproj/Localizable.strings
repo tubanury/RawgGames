@@ -22,3 +22,5 @@
 "mostReviewed" = "Most Reviewed";
 "favoritesNotificationTitle" = "Recently added new favorite games.";
 "favoritesNotificationBody" = "Did you play your new fave games? Check it out!";
+"gameNotFound" = "Aradığın oyunu bulamadık :(";
+"error" = "Hata";

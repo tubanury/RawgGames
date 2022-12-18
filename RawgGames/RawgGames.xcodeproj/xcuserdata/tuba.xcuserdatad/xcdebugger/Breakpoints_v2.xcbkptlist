@@ -262,7 +262,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "62A56BD2-F6DB-4F35-A966-4E302FFAE160"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RawgGames/Scene/FavoritesList/ViewModel/FavoritesListViewModel.swift"
@@ -1309,6 +1309,22 @@
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "favoriteGamesChanged()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4FCB916-411D-4413-907C-E09C5F7D9627"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RawgGames/Core/GameClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getGamesBySearchText(searchText:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

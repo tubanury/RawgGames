@@ -23,3 +23,5 @@
 "mostReviewed" = "En Çok Değerlendirilenler";
 "favoritesNotificationTitle" = "Yeni Favoriler Ekledin.";
 "favoritesNotificationBody" = "Favori oyunlarını oynadın mı? ";
+"gameNotFound" = "Game not found :(";
+"error" = "Error";

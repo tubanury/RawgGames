@@ -116,7 +116,7 @@ extension GameListViewController: GameListViewModelDelegate {
         self.gameListTableView.refreshControl?.endRefreshing()
     }
     func gamesFailed() {
-        presentAlert(title: "Hata", message: "Oyunlar yüklenemedi")
+        presentAlert(title: Localizables.error.value, message: Localizables.gameNotFound.value)
     }
     func gamesSorted() {
         gameListTableView.reloadData()
