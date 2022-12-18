@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  RawgGames
+
+  Created by Tuba N. Yıldız on 12.12.2022.
+  
+*/
+"browseGames" = "Browse Games!";
+"favoritesPlaceHolderTitle" = "You have no games in your favorites list.";
+"thousandShortening" = "K";
+"reviews" = "reviews";
+"released" = "Released";
+"downloads" = "Downloads";
+"developers" = "Developers";
+"unknown" = "Unknown";
+"noDescription" = "No Description";
+"search" = "search...";
+"tryAgain" = "Try Again";
+"warning" = "Warning!";
+"emptyNoteMessage" = "Note text or title can not be empty.";
+"highestRating" = "Highest Rating";
+"mostReviewed" = "Most Reviewed";
+"favoritesNotificationTitle" = "Recently added new favorite games.";
+"favoritesNotificationBody" = "Did you play your new fave games? Check it out!";
