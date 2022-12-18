@@ -10,15 +10,14 @@ import XCTest
 final class GameListViewModelUnitTest: XCTestCase {
 
     var viewModel: GameListViewModel!
-    var fetchExpectetiton: XCTestExpectation!
+    var fetchExpectation: XCTestExpectation!
     var sortExpectetion: XCTestExpectation!
 
     
     override func setUpWithError() throws {
         viewModel = GameListViewModel()
         viewModel.delegate = self
-        fetchExpectetiton = expectation(description: "fetchGames")
-        sortExpectetion = expectation(description: "sortGames")
+        fetchExpectation = expectation(description: "fetchGames")
 
         
     }
@@ -32,7 +31,7 @@ final class GameListViewModelUnitTest: XCTestCase {
         
         //when
         viewModel.fetchGames()
-        waitForExpectations(timeout: 10)
+        wait(for: [fetchExpectation], timeout: 10)
 
         //then
         XCTAssertEqual(viewModel.getGameCount(), 20)
@@ -43,18 +42,20 @@ final class GameListViewModelUnitTest: XCTestCase {
         XCTAssertNil(viewModel.getGame(at: 0))
         
         viewModel.fetchGames()
-        waitForExpectations(timeout: 10)
-        
+        wait(for: [fetchExpectation], timeout: 10)
+
         let gameAtZero = viewModel.getGame(at: 0)
+        
         XCTAssertEqual(gameAtZero?.id, 3498)
         XCTAssertEqual(gameAtZero?.name, "Grand Theft Auto V")
 
     }
     
     func testSortGames(){
-        
+        sortExpectetion = expectation(description: "sortGames")
+
         viewModel.fetchGames()
-        wait(for: [fetchExpectetiton], timeout: 10)
+        wait(for: [fetchExpectation], timeout: 10)
 
         viewModel.sortGames(by: 0)
        
@@ -69,7 +70,7 @@ extension GameListViewModelUnitTest: GameListViewModelDelegate {
     func gamesFailed() {}
     
     func gamesLoaded() {
-        fetchExpectetiton.fulfill()
+        fetchExpectation.fulfill()
 
     }
     func gamesSorted() {

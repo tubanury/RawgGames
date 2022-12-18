@@ -26,7 +26,6 @@ protocol GameDetailViewModelProtocol {
     func getSimilarGame(at index: Int) -> GameModel?
     func getSimilarGamesCount() -> Int
     func addToFavorites(image: UIImage?) -> Bool
-    func prepareImageForSavingCoreData(image: UIImage?) -> Data
 }
 
 protocol GameDetailViewModelDelegate: AnyObject {
@@ -135,7 +134,7 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
         }
     }
     
-    func prepareImageForSavingCoreData(image: UIImage?) -> Data {
+    private func prepareImageForSavingCoreData(image: UIImage?) -> Data {
         if let image = image {
             if let imageData = image.jpegData(compressionQuality: 1) {
                 return imageData

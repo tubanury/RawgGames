@@ -10,12 +10,14 @@ import XCTest
 final class GameDetailViewModelUnitTest: XCTestCase {
     var viewModel: GameDetailViewModel!
     var fetchExpectation: XCTestExpectation!
-    
+    var fetchSimilarGamesExpectation: XCTestExpectation!
+
     
     override func setUpWithError() throws {
         viewModel = GameDetailViewModel()
         viewModel.delegate = self
         fetchExpectation = expectation(description: "fetchGameDetail")
+
     }
     
     func testGetGameName() throws {
@@ -23,36 +25,49 @@ final class GameDetailViewModelUnitTest: XCTestCase {
         
         //When
         viewModel.fetchGameDetail(id: 3498)
-        waitForExpectations(timeout: 10)
-        
+        wait(for: [fetchExpectation], timeout: 10)
+
         //Then
         XCTAssertEqual(viewModel.getGameName(), "Grand Theft Auto V")
     }
     
     func testGetGameReleaseYear() throws {
-        XCTAssertEqual(viewModel.getGameReleaseYear(), "Unknown")
+        XCTAssertEqual(viewModel.getGameReleaseYear(), Localizables.unknown.value)
         viewModel.fetchGameDetail(id: 3498)
-        waitForExpectations(timeout: 10)
+        wait(for: [fetchExpectation], timeout: 10)
         XCTAssertEqual(viewModel.getGameReleaseYear(), "2013")
     }
     func testGetGameImageURL() throws {
         
         XCTAssertEqual(viewModel.getGameImageURL(), URL(string: ""))
         viewModel.fetchGameDetail(id: 3498)
-        waitForExpectations(timeout: 10)
+        wait(for: [fetchExpectation], timeout: 10)
         XCTAssertEqual(viewModel.getGameImageURL(), URL(string: "https://media.rawg.io/media/screenshots/5f5/5f5a38a222252d996b18962806eed707.jpg"))
     }
     func testGetGameIconImageUrl() throws {
         XCTAssertEqual(viewModel.getGameIconImageUrl(), URL(string: ""))
         viewModel.fetchGameDetail(id: 3498)
-        waitForExpectations(timeout: 10)
+        wait(for: [fetchExpectation], timeout: 10)
         XCTAssertEqual(viewModel.getGameIconImageUrl(), URL(string: "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"))
     }
+    
     func testGetGameRating() throws {
         XCTAssertEqual(viewModel.getGameRating(), 0)
         viewModel.fetchGameDetail(id: 3498)
-        waitForExpectations(timeout: 10)
+        wait(for: [fetchExpectation], timeout: 10)
         XCTAssertEqual(viewModel.getGameRating(), 4.47)
+    }
+    
+    func testGetSimilarGames() {
+        
+        fetchSimilarGamesExpectation = expectation(description: "fetchSimilarGamesExpectation")
+        viewModel.fetchGameDetail(id: 3498)
+        wait(for: [fetchExpectation], timeout: 10)
+
+        XCTAssertEqual(viewModel.getSimilarGamesCount(), 0)
+        viewModel.fetchGamesFromSameSeries(id: 3498)
+        wait(for: [fetchSimilarGamesExpectation], timeout: 10)
+        XCTAssertEqual(viewModel.getSimilarGamesCount(), 9)
     }
    
 }
@@ -61,7 +76,7 @@ extension GameDetailViewModelUnitTest: GameDetailViewModelDelegate {
     func gameLoaded() {
         fetchExpectation.fulfill()
     }
-    
-    func similarGamesLoaded() {}
-    
+    func similarGamesLoaded() {
+        fetchSimilarGamesExpectation.fulfill()
+    }
 }
