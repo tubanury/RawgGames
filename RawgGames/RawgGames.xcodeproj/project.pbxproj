@@ -164,12 +164,12 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		951059A4294BBB5B00CFD9AD /* BaseComponent */ = {
+		951059A4294BBB5B00CFD9AD /* BaseComponents */ = {
 			isa = PBXGroup;
 			children = (
 				951059A5294BBB9F00CFD9AD /* BaseViewController.swift */,
 			);
-			path = BaseComponent;
+			path = BaseComponents;
 			sourceTree = "<group>";
 		};
 		951059A9294BC88100CFD9AD /* Extensions */ = {
@@ -204,7 +204,7 @@
 		952F63C5293F8F9E008B0FD7 /* RawgGames */ = {
 			isa = PBXGroup;
 			children = (
-				951059A4294BBB5B00CFD9AD /* BaseComponent */,
+				951059A4294BBB5B00CFD9AD /* BaseComponents */,
 				950E7D0C2947A13F00F2D3DE /* Utilities */,
 				952F63FB293F903B008B0FD7 /* Scene */,
 				952F63FA293F9008008B0FD7 /* Core */,
