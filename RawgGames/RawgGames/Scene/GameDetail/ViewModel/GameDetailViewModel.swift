@@ -54,9 +54,7 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
             self.delegate?.similarGamesLoaded()
         }
     }
-    func fetchGamesFromSameDevelopers(){
-        
-    }
+   
     func isGameFavorited() -> Bool{
         return CoreDataManager.shared.isGameSaved(id: game?.id ?? 0).count > 0
     }
