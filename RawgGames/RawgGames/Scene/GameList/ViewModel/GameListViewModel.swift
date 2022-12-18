@@ -27,11 +27,6 @@ final class GameListViewModel: GameListViewModelProtocol {
     weak var delegate: GameListViewModelDelegate?
     private var games: [GameModel]?
 
-    func checkConnection(){
-        if !Connectivity.isConnectedToInternet {
-            self.delegate?.noConnection()
-        }
-    }
     func fetchGames() {
         if !Connectivity.isConnectedToInternet {
             self.delegate?.noConnection()
