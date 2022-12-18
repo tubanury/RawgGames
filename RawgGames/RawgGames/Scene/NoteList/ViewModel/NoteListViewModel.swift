@@ -23,7 +23,7 @@ protocol NoteListViewModelDelegate: AnyObject {
     func noteUpdated(note: Note)
 }
 
-class NoteListViewModel: NoteListViewModelProtocol {
+final class NoteListViewModel: NoteListViewModelProtocol {
    
     weak var delegate: NoteListViewModelDelegate?
     

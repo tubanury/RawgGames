@@ -58,6 +58,9 @@
 		955D2389294E017200851E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F63C6293F8F9E008B0FD7 /* AppDelegate.swift */; };
 		955D238B294E038D00851E59 /* GameDetailViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D238A294E038D00851E59 /* GameDetailViewModelUnitTest.swift */; };
 		955D2394294F341100851E59 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D2393294F341100851E59 /* LocalNotificationManager.swift */; };
+		955D2395294F3BA900851E59 /* Localizables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D2377294DD07800851E59 /* Localizables.swift */; };
+		955D2396294F3BBB00851E59 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D2393294F341100851E59 /* LocalNotificationManager.swift */; };
+		955D2397294F3BCE00851E59 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950E7D0D2947A15000F2D3DE /* String+Extensions.swift */; };
 		956C9A46294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C9A45294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift */; };
 		95DDC11929491E5C00E26C36 /* DetailTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDC11829491E5C00E26C36 /* DetailTagCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -642,16 +645,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955D2395294F3BA900851E59 /* Localizables.swift in Sources */,
 				955D237C294DFC7400851E59 /* GameListViewModelUnitTest.swift in Sources */,
 				955D237E294DFFB400851E59 /* GameDetailViewModel.swift in Sources */,
 				955D2389294E017200851E59 /* AppDelegate.swift in Sources */,
 				952F63E1293F8F9F008B0FD7 /* RawgGamesTests.swift in Sources */,
 				955D237D294DFFA300851E59 /* GameListViewModel.swift in Sources */,
+				955D2396294F3BBB00851E59 /* LocalNotificationManager.swift in Sources */,
 				955D2382294DFFE500851E59 /* GameClient.swift in Sources */,
 				955D237F294DFFC600851E59 /* GameDetailModel.swift in Sources */,
 				955D2387294E014800851E59 /* CoreDataManager.swift in Sources */,
 				955D2381294DFFDC00851E59 /* GameModel.swift in Sources */,
 				955D2384294E012300851E59 /* GetGamesResponseModel.swift in Sources */,
+				955D2397294F3BCE00851E59 /* String+Extensions.swift in Sources */,
 				955D2388294E016300851E59 /* RawgGames.xcdatamodeld in Sources */,
 				955D2380294DFFD000851E59 /* GameTableViewCell.swift in Sources */,
 				955D238B294E038D00851E59 /* GameDetailViewModelUnitTest.swift in Sources */,

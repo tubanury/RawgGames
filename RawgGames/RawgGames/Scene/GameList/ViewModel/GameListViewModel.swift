@@ -12,11 +12,13 @@ protocol GameListViewModelProtocol {
     func fetchGames()
     func getGameCount() -> Int
     func getGame(at index: Int) -> GameModel?
+    func sortGames(by: Int)
 }
 
 protocol GameListViewModelDelegate: AnyObject {
     func gamesLoaded()
     func gamesFailed()
+    func gamesSorted()
 }
 
 final class GameListViewModel: GameListViewModelProtocol {
@@ -47,6 +49,13 @@ final class GameListViewModel: GameListViewModelProtocol {
         }
     }
     
+    func getGameCount() -> Int {
+        games?.count ?? 0
+    }
+    func getGame(at index: Int) -> GameModel? {
+        return games?[index]
+    }
+    
     func sortGames(by: Int) {
         switch by{
         case 0:
@@ -56,14 +65,7 @@ final class GameListViewModel: GameListViewModelProtocol {
         default:
             self.games = games?.sorted() { $0.ratingsCount > $1.ratingsCount }
         }
-        self.delegate?.gamesLoaded()
-    }
-    
-    func getGameCount() -> Int {
-        games?.count ?? 0
-    }
-    func getGame(at index: Int) -> GameModel? {
-        return games?[index]
+        self.delegate?.gamesSorted()
     }
     
 }

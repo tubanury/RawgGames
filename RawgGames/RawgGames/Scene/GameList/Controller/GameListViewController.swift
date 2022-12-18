@@ -32,7 +32,6 @@ class GameListViewController: BaseViewController {
         search.searchBar.delegate = self
         indicator.startAnimating()
         viewModel.fetchGames()
-        //viewModel.requestNotificationAuthorization()
         LocalNotificationManager.shared.requestNotificationAuthorization()
         gameListTableView.refreshControl = UIRefreshControl()
         gameListTableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
@@ -118,6 +117,10 @@ extension GameListViewController: GameListViewModelDelegate {
     }
     func gamesFailed() {
         presentAlert(title: "Hata", message: "Oyunlar yüklenemedi")
+    }
+    func gamesSorted() {
+        gameListTableView.reloadData()
+        indicator.stopAnimating()
     }
 }
 
