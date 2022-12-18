@@ -63,6 +63,7 @@
 		955D2397294F3BCE00851E59 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950E7D0D2947A15000F2D3DE /* String+Extensions.swift */; };
 		955D239B294F44D700851E59 /* NotesCoreDataUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D239A294F44D700851E59 /* NotesCoreDataUnitTest.swift */; };
 		955D239C294F452900851E59 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B5C2943CDD500E7E454 /* NoteListViewModel.swift */; };
+		955D239E294F7C4900851E59 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D239D294F7C4900851E59 /* CacheManager.swift */; };
 		956C9A46294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C9A45294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift */; };
 		95DDC11929491E5C00E26C36 /* DetailTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDC11829491E5C00E26C36 /* DetailTagCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,7 @@
 		955D238A294E038D00851E59 /* GameDetailViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModelUnitTest.swift; sourceTree = "<group>"; };
 		955D2393294F341100851E59 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		955D239A294F44D700851E59 /* NotesCoreDataUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCoreDataUnitTest.swift; sourceTree = "<group>"; };
+		955D239D294F7C4900851E59 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		956C9A45294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreGamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		95DDC11829491E5C00E26C36 /* DetailTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTagCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +265,7 @@
 				952F640A293FCECD008B0FD7 /* GameClient.swift */,
 				954E0B682943E9FD00E7E454 /* CoreDataManager.swift */,
 				955D2393294F341100851E59 /* LocalNotificationManager.swift */,
+				955D239D294F7C4900851E59 /* CacheManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				952F63D1293F8F9E008B0FD7 /* RawgGames.xcdatamodeld in Sources */,
 				952F63CB293F8F9E008B0FD7 /* GameListViewController.swift in Sources */,
 				952F6407293FBD6F008B0FD7 /* GetGamesResponseModel.swift in Sources */,
+				955D239E294F7C4900851E59 /* CacheManager.swift in Sources */,
 				952F6409293FBE66008B0FD7 /* GameListViewModel.swift in Sources */,
 				955D2394294F341100851E59 /* LocalNotificationManager.swift in Sources */,
 				956C9A46294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift in Sources */,

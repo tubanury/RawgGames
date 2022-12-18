@@ -70,16 +70,20 @@ extension GameDetailViewController: GameDetailViewModelDelegate {
     func gameLoaded() {
         indicator.stopAnimating()
         gameNameLabel.text = viewModel.getGameName()
+        gameGenresLabel.text = viewModel.getGameGenres()
+        gameDescription.text = viewModel.getGameDescription()
+        
+        if viewModel.isGameFavorited() {
+            favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
+        }
         guard let url = viewModel.getGameImageURL() else {return}
         gameImageView.af.setImage(withURL: url)
         if let iconUrl = viewModel.getGameIconImageUrl(){
             gameIconImageView.af.setImage(withURL: iconUrl)
         }
-        gameGenresLabel.text = viewModel.getGameGenres()
-        gameDescription.text = viewModel.getGameDescription()
-        if viewModel.isGameFavorited() {
-            favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
-        }
+        
+        
+        
         self.detailTagsCollectionView.reloadData()
 
         //self.moreGamesCollectionView.reloadData()
