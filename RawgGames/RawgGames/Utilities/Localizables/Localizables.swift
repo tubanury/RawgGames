@@ -39,5 +39,6 @@ enum Localizables: String, GenericValueProtocol{
     case gameNotFound = "gameNotFound"
     case error = "error"
     case coreDataFailed = "coreDataFailed"
+    case noConnection = "noConnection";
 
 }

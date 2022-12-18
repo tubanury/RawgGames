@@ -26,3 +26,4 @@
 "gameNotFound" = "Game not found :(";
 "error" = "Error";
 "coreDataFailed" = "Değişiklikler kaydedilirken bir hata oldu";
+"noConnection" = "İnternet bağlantınız yok.";

@@ -33,6 +33,9 @@
 		952F64192941E80F008B0FD7 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F64182941E80F008B0FD7 /* GameDetailViewController.swift */; };
 		952F641B2941E866008B0FD7 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F641A2941E866008B0FD7 /* GameDetailViewModel.swift */; };
 		952F641D2941E877008B0FD7 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F641C2941E877008B0FD7 /* GameDetailModel.swift */; };
+		9530384F294FA2B5006A5A5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9530384E294FA2B5006A5A5D /* GoogleService-Info.plist */; };
+		9530385A294FA472006A5A5D /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95303859294FA472006A5A5D /* Connectivity.swift */; };
+		9530385C294FA624006A5A5D /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530385B294FA624006A5A5D /* PlaceHolderView.swift */; };
 		954E0B5B2943CDC700E7E454 /* NoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B5A2943CDC700E7E454 /* NoteListTableViewCell.swift */; };
 		954E0B5D2943CDD500E7E454 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B5C2943CDD500E7E454 /* NoteListViewModel.swift */; };
 		954E0B5F2943CDE400E7E454 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B5E2943CDE400E7E454 /* NoteListViewController.swift */; };
@@ -42,7 +45,6 @@
 		954E0B6F2946076500E7E454 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B6E2946076500E7E454 /* FavoritesListViewController.swift */; };
 		954E0B712946077C00E7E454 /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */; };
 		954E0B742946340500E7E454 /* FavoritesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E0B732946340500E7E454 /* FavoritesListTableViewCell.swift */; };
-		955D2375294D314600851E59 /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D2374294D314600851E59 /* PlaceHolderView.swift */; };
 		955D2378294DD07800851E59 /* Localizables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D2377294DD07800851E59 /* Localizables.swift */; };
 		955D237C294DFC7400851E59 /* GameListViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D237B294DFC7400851E59 /* GameListViewModelUnitTest.swift */; };
 		955D237D294DFFA300851E59 /* GameListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952F6408293FBE66008B0FD7 /* GameListViewModel.swift */; };
@@ -115,6 +117,9 @@
 		952F64182941E80F008B0FD7 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		952F641A2941E866008B0FD7 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		952F641C2941E877008B0FD7 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
+		9530384E294FA2B5006A5A5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95303859294FA472006A5A5D /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		9530385B294FA624006A5A5D /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		954E0B5A2943CDC700E7E454 /* NoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListTableViewCell.swift; sourceTree = "<group>"; };
 		954E0B5C2943CDD500E7E454 /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		954E0B5E2943CDE400E7E454 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +129,6 @@
 		954E0B6E2946076500E7E454 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		954E0B702946077C00E7E454 /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
 		954E0B732946340500E7E454 /* FavoritesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListTableViewCell.swift; sourceTree = "<group>"; };
-		955D2374294D314600851E59 /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		955D2377294DD07800851E59 /* Localizables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizables.swift; sourceTree = "<group>"; };
 		955D2379294DD48900851E59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		955D237A294DD48B00851E59 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			children = (
 				955D2376294DD06500851E59 /* Localizables */,
 				951059A9294BC88100CFD9AD /* Extensions */,
+				95303859294FA472006A5A5D /* Connectivity.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				951059A5294BBB9F00CFD9AD /* BaseViewController.swift */,
+				9530385B294FA624006A5A5D /* PlaceHolderView.swift */,
 			);
 			path = BaseComponents;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 				952F63FA293F9008008B0FD7 /* Core */,
 				952F63F9293F8FED008B0FD7 /* App */,
 				952F63D7293F8F9F008B0FD7 /* Info.plist */,
+				9530384E294FA2B5006A5A5D /* GoogleService-Info.plist */,
 				952F63CF293F8F9E008B0FD7 /* RawgGames.xcdatamodeld */,
 			);
 			path = RawgGames;
@@ -450,7 +457,6 @@
 			isa = PBXGroup;
 			children = (
 				954E0B732946340500E7E454 /* FavoritesListTableViewCell.swift */,
-				955D2374294D314600851E59 /* PlaceHolderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				950E7D112947A3A600F2D3DE /* Localizable.strings in Resources */,
 				952F63D3293F8F9F008B0FD7 /* Assets.xcassets in Resources */,
 				952F63CE293F8F9E008B0FD7 /* Main.storyboard in Resources */,
+				9530384F294FA2B5006A5A5D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,12 +628,14 @@
 				952F641B2941E866008B0FD7 /* GameDetailViewModel.swift in Sources */,
 				951059A8294BC7E900CFD9AD /* CALayer+Extensions.swift in Sources */,
 				954E0B672943E20F00E7E454 /* AddNoteViewController.swift in Sources */,
+				9530385C294FA624006A5A5D /* PlaceHolderView.swift in Sources */,
 				954E0B692943E9FD00E7E454 /* CoreDataManager.swift in Sources */,
 				951059A6294BBB9F00CFD9AD /* BaseViewController.swift in Sources */,
 				952F63D1293F8F9E008B0FD7 /* RawgGames.xcdatamodeld in Sources */,
 				952F63CB293F8F9E008B0FD7 /* GameListViewController.swift in Sources */,
 				952F6407293FBD6F008B0FD7 /* GetGamesResponseModel.swift in Sources */,
 				955D239E294F7C4900851E59 /* CacheManager.swift in Sources */,
+				9530385A294FA472006A5A5D /* Connectivity.swift in Sources */,
 				952F6409293FBE66008B0FD7 /* GameListViewModel.swift in Sources */,
 				955D2394294F341100851E59 /* LocalNotificationManager.swift in Sources */,
 				956C9A46294A4BA800BDB870 /* MoreGamesCollectionViewCell.swift in Sources */,
@@ -640,7 +649,6 @@
 				952F63C7293F8F9E008B0FD7 /* AppDelegate.swift in Sources */,
 				952F63C9293F8F9E008B0FD7 /* SceneDelegate.swift in Sources */,
 				952F641D2941E877008B0FD7 /* GameDetailModel.swift in Sources */,
-				955D2375294D314600851E59 /* PlaceHolderView.swift in Sources */,
 				954E0B5B2943CDC700E7E454 /* NoteListTableViewCell.swift in Sources */,
 				952F6405293F96A8008B0FD7 /* GameModel.swift in Sources */,
 				954E0B742946340500E7E454 /* FavoritesListTableViewCell.swift in Sources */,

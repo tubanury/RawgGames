@@ -19,6 +19,7 @@ protocol GameListViewModelDelegate: AnyObject {
     func gamesLoaded()
     func gamesFailed()
     func gamesSorted()
+    func noConnection()
 }
 
 final class GameListViewModel: GameListViewModelProtocol {
@@ -26,15 +27,25 @@ final class GameListViewModel: GameListViewModelProtocol {
     weak var delegate: GameListViewModelDelegate?
     private var games: [GameModel]?
 
+    func checkConnection(){
+        if !Connectivity.isConnectedToInternet {
+            self.delegate?.noConnection()
+        }
+    }
     func fetchGames() {
-        self.games?.removeAll()
-        GameClient.getGames { [weak self] games, error in
-            guard let self = self else {return}
-            if let _ =  error {
-                self.delegate?.gamesFailed()
+        if !Connectivity.isConnectedToInternet {
+            self.delegate?.noConnection()
+        }
+        else{
+            self.games?.removeAll()
+            GameClient.getGames { [weak self] games, error in
+                guard let self = self else {return}
+                if let _ =  error {
+                    self.delegate?.gamesFailed()
+                }
+                self.games = games
+                self.delegate?.gamesLoaded()
             }
-            self.games = games
-            self.delegate?.gamesLoaded()
         }
     }
     

@@ -25,4 +25,5 @@
 "gameNotFound" = "Aradığın oyunu bulamadık :(";
 "error" = "Hata";
 "coreDataFailed" = "Some error ocured while saving";
+"noConnection" = "OOOPS! No Connection";
 

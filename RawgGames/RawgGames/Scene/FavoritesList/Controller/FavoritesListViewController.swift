@@ -18,7 +18,7 @@ final class FavoritesListViewController: BaseViewController {
     }
     
     private var viewModel = FavoritesListViewModel()
-    private var beforeSearchImage = PlaceHolderView()
+    private var noFavoritesView = PlaceHolderView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,15 @@ final class FavoritesListViewController: BaseViewController {
     }
     
      private func addPlaceHolderView(){
-         beforeSearchImage.translatesAutoresizingMaskIntoConstraints =  false
-         view.addSubview(beforeSearchImage)
+         noFavoritesView.translatesAutoresizingMaskIntoConstraints =  false
+         noFavoritesView.loadDataView(imageName: "noFavorite", labelText: Localizables.favoritesPlaceHolderTitle.value)
+         view.addSubview(noFavoritesView)
          
          NSLayoutConstraint.activate([
-             beforeSearchImage.topAnchor.constraint(equalTo: view.topAnchor, constant:50),
-             beforeSearchImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-             beforeSearchImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-             beforeSearchImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            noFavoritesView.topAnchor.constraint(equalTo: view.topAnchor, constant:50),
+            noFavoritesView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            noFavoritesView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            noFavoritesView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
          ])
      }
 
@@ -43,7 +44,7 @@ final class FavoritesListViewController: BaseViewController {
 extension FavoritesListViewController: FavoriteListViewModelDelegate {
     func favoriteGamesChanged() {
         if viewModel.getFavoriteGameCount() > 0 {
-            beforeSearchImage.removeFromSuperview()
+            noFavoritesView.removeFromSuperview()
             self.favoritesListTableView.reloadData()
         }
         else {

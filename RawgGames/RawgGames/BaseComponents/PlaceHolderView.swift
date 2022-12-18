@@ -1,9 +1,12 @@
 //
-//  PlaceHolderView.swift
+//  placeHolder.swift
 //  RawgGames
 //
-//  Created by Tuba N. Yıldız on 17.12.2022.
+//  Created by Tuba N. Yıldız on 18.12.2022.
 //
+
+import Foundation
+
 
 import UIKit
 
@@ -33,7 +36,7 @@ final class PlaceHolderView: UIView {
         let temp = UIImageView()
         temp.translatesAutoresizingMaskIntoConstraints =  false
         temp.contentMode = .scaleAspectFit
-        temp.image = UIImage(named: "noFavorite")
+        //temp.image = UIImage(named: "noFavorite")
         return temp
         
     }()
@@ -41,7 +44,7 @@ final class PlaceHolderView: UIView {
         let temp = UILabel()
         temp.translatesAutoresizingMaskIntoConstraints =  false
         temp.font = UIFont(name: "Futura", size: 15)
-        temp.text = Localizables.favoritesPlaceHolderTitle.value
+        //temp.text = Localizables.favoritesPlaceHolderTitle.value
         return temp
         
     }()
@@ -52,6 +55,12 @@ final class PlaceHolderView: UIView {
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func loadDataView(imageName: String, labelText: String){
+        image.image = UIImage(named: imageName)
+        label.text = labelText
+
     }
     
     private func addComponents(){

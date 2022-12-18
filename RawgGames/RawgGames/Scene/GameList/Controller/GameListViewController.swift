@@ -13,6 +13,8 @@ class GameListViewController: BaseViewController {
     private var picker  = UIPickerView()
     private var toolBar = UIToolbar()
     var pickerValues = [Localizables.highestRating.value, Localizables.mostReviewed.value]
+    private var noConnectionView = PlaceHolderView()
+
     
     @IBOutlet weak var sortButtonItem: UIBarButtonItem!
     
@@ -20,6 +22,7 @@ class GameListViewController: BaseViewController {
         didSet {
             gameListTableView.delegate = self
             gameListTableView.dataSource = self
+            gameListTableView.prefetchDataSource = self
         }
     }
     
@@ -61,6 +64,7 @@ class GameListViewController: BaseViewController {
         self.navigationController?.navigationBar.standardAppearance = appearance;
         self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
     }
+    
     private func configurePickerView(){
         picker = UIPickerView.init()
        picker.delegate = self
@@ -75,6 +79,18 @@ class GameListViewController: BaseViewController {
        toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
        toolBar.items = [UIBarButtonItem.init(title: "Select", style: .done, target: self, action: #selector(onPickerSelectButtonTapped))]
        self.view.addSubview(toolBar)
+    }
+    private func addPlaceHolderView(){
+        noConnectionView.translatesAutoresizingMaskIntoConstraints =  false
+        noConnectionView.loadDataView(imageName: "noConnection", labelText: Localizables.noConnection.value)
+        view.addSubview(noConnectionView)
+        
+        NSLayoutConstraint.activate([
+            noConnectionView.topAnchor.constraint(equalTo: view.topAnchor, constant:50),
+            noConnectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            noConnectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            noConnectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
     
@@ -110,9 +126,12 @@ extension GameListViewController: GameListViewModelDelegate {
         gameListTableView.reloadData()
         indicator.stopAnimating()
     }
+    func noConnection() {
+        addPlaceHolderView()
+    }
 }
 
-extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
+extension GameListViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching{
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.getGameCount()
@@ -122,7 +141,6 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as? GameTableViewCell,
              let game = viewModel.getGame(at: indexPath.row) else {return UITableViewCell()}
-        
         cell.configureCell(game: game)
         return cell
     }
@@ -133,6 +151,18 @@ extension GameListViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
        
     }
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        //todo
+        /*for indexPath in indexPaths {
+            guard let id = viewModel.getGame(at: indexPath.row)?.id else {return}
+            guard let imageString = viewModel.getGame(at: indexPath.row)?.backgroundImage else {return}
+            CacheManager.shared.getImage(id: id, imageString: imageString) { image in
+                //nothing
+            }
+        }*/
+    }
+    
+    
 }
 
 extension GameListViewController: UISearchBarDelegate {    
