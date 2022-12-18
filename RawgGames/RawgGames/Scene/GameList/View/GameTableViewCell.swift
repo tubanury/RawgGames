@@ -28,31 +28,19 @@ final class GameTableViewCell: UITableViewCell {
         gameAdded.setTitle(String(game.added/1000) + Localizables.thousandShortening.value, for: .normal)
         gameTag.setTitle(game.tags.first?.name, for: .normal)
 
-        //guard let url = URL(string: game.backgroundImage) else {return}
-        //gameImage.af.setImage(withURL: url)
-        
         if let cachedImage = self.cache.object(forKey: game.id as NSNumber) {
                    print("Using a cached image for item: \(game.id)")
                 self.gameImage.image = cachedImage
         } else {
-           // 4
             self.loadImage(game: game) { [weak self] (image) in
                guard let self = self, let image = image else { return }
                
                self.gameImage.image = image
-               // 5
                self.cache.setObject(image, forKey: game.id as NSNumber)
            }
         }
         
-        
-        /*GameClient.fetchImage(withUrlString: game.backgroundImage) { image in
-            DispatchQueue.main.async {
-                self.gameImage.image = image
-            }
-        }*/
     }
-    
     
     private func loadImage(game: GameModel, completion: @escaping (UIImage?) -> ()) {
           utilityQueue.async {

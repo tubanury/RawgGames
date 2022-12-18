@@ -37,8 +37,9 @@ final class GameClient {
     }
     
     static func getGamesBySearchText(searchText: String, completion: @escaping ([GameModel]?, Error?) -> Void) {
-
-        let urlString = BASE_URL + "games?search=" + searchText + "&ordering=-rating" + "&key=" + Constants.API_KEY
+        guard let encodedString = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        let urlString = BASE_URL + "games?search=" + encodedString + "&ordering=-rating" + "&key=" + Constants.API_KEY
+        print(urlString)
         handleResponse(urlString: urlString, responseType: GetGamesResponseModel.self) { responseModel, error in
             completion(responseModel?.results, error)
         }

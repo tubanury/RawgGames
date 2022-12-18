@@ -44,6 +44,7 @@ final class FavoritesListViewModel: FavoritesListViewModelProtocol {
         guard let game = self.getGameFromFavorites(at: index) else {return}
         CoreDataManager.shared.deleteGame(game: game)
         games?.remove(at: index)
+        self.delegate?.favoriteGamesChanged()
     }
     
     func getNotification(controller: UIViewController) {
