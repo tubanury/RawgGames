@@ -13,10 +13,10 @@ class MoreGamesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var gameNameLabel: UILabel!
     
-    func configureCell(game: Result){
+    func configureCell(game: GameModel){
         gameNameLabel.text = game.name
         
-        guard let url = URL(string: game.backgroundImage) else {return}
+        guard let url = URL(string: game.backgroundImage ?? "") else {return}
         gameIconImage.af.setImage(withURL: url)
     }
 }

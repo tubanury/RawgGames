@@ -18,7 +18,7 @@ protocol GameListViewModelProtocol {
 
 protocol GameListViewModelDelegate: AnyObject {
     func gamesLoaded()
-    //func gamesFailed()
+    func gamesFailed()
 }
 
 final class GameListViewModel: GameListViewModelProtocol {
@@ -32,7 +32,7 @@ final class GameListViewModel: GameListViewModelProtocol {
         GameClient.getGames { [weak self] games, error in
             guard let self = self else {return}
             if let _ =  error {
-                //self.delegate?.gamesFailed()
+                self.delegate?.gamesFailed()
             }
             self.games = games
             self.delegate?.gamesLoaded()
@@ -43,7 +43,7 @@ final class GameListViewModel: GameListViewModelProtocol {
         GameClient.getGamesBySearchText(searchText: searchText) { [weak self] searchGames, error in
             guard let self = self else {return}
             if let _ =  error {
-                //self.delegate?.gamesFailed()
+                self.delegate?.gamesFailed()
             }
             self.games = searchGames
             self.delegate?.gamesLoaded()

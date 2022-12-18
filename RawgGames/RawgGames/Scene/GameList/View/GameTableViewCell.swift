@@ -56,7 +56,7 @@ final class GameTableViewCell: UITableViewCell {
     
     private func loadImage(game: GameModel, completion: @escaping (UIImage?) -> ()) {
           utilityQueue.async {
-              let url = URL(string: game.backgroundImage)!
+              guard let url = URL(string: game.backgroundImage ?? "") else {return}
               
               guard let data = try? Data(contentsOf: url) else { return }
               let image = UIImage(data: data)

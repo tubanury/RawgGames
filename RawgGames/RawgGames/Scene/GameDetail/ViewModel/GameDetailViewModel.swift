@@ -24,8 +24,8 @@ protocol GameDetailViewModelProtocol {
     func getGameDeveloperName() -> String
     func getGameAddedCount() -> Int
     func getGameDescription() -> String
-    func getSimilarGames() -> [Result]?
-    func getSimilarGame(at index: Int) -> Result?
+    func getSimilarGames() -> [GameModel]?
+    func getSimilarGame(at index: Int) -> GameModel?
     func getSimilarGamesCount() -> Int
     func addToFavorites(image: UIImage?) -> Bool
     func prepareImageForSavingCoreData(image: UIImage?) -> Data
@@ -41,7 +41,7 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
 
     weak var delegate: GameDetailViewModelDelegate?
     private var game: GameDetailModel?
-    private var similarGames: [Result]?
+    private var similarGames: [GameModel]?
     let userNotificationCenter =  UNUserNotificationCenter.current()
     
     let imageProcessingQueue = DispatchQueue(label: "imageProcessingQueue", attributes: DispatchQueue.Attributes.concurrent)
@@ -112,11 +112,11 @@ final class GameDetailViewModel: GameDetailViewModelProtocol {
         game?.descriptionRaw ?? "No Description"
     }
     
-    func getSimilarGames() -> [Result]? {
+    func getSimilarGames() -> [GameModel]? {
         similarGames ?? []
     }
     
-    func getSimilarGame(at index: Int) -> Result? {
+    func getSimilarGame(at index: Int) -> GameModel? {
         similarGames?[index]
     }
     func getSimilarGamesCount() -> Int {

@@ -28,22 +28,18 @@ final class GameClient {
         handleResponse(urlString: urlString, responseType: GameDetailModel.self, completion: completion)
     }
     
-    static func getGamesFromSameSeries(gameId: Int, completion: @escaping ([Result]?, Error?) -> Void) {
+    static func getGamesFromSameSeries(gameId: Int, completion: @escaping ([GameModel]?, Error?) -> Void) {
 
         let urlString = BASE_URL + "games/" + String(gameId) + "/game-series?key=" + Constants.API_KEY
-        print(urlString)
-        handleResponse(urlString: urlString, responseType: FilteredGamesModel.self) { responseModel, error in
+        handleResponse(urlString: urlString, responseType: GetGamesResponseModel.self) { responseModel, error in
             completion(responseModel?.results, error)
         }
     }
     
     static func getGamesBySearchText(searchText: String, completion: @escaping ([GameModel]?, Error?) -> Void) {
 
-        let urlString = BASE_URL + "games?search=" + searchText + "&key=" + Constants.API_KEY
-        //let urlString = "https://api.rawg.io/api/games?search=Portal&key=973c8640b5a748528ff42954a37c119d"
-        print(urlString)
-        handleResponse(urlString: urlString, responseType: GamesFromSearchModel.self) { responseModel, error in
-            print(responseModel?.results)
+        let urlString = BASE_URL + "games?search=" + searchText + "&ordering=-rating" + "&key=" + Constants.API_KEY
+        handleResponse(urlString: urlString, responseType: GetGamesResponseModel.self) { responseModel, error in
             completion(responseModel?.results, error)
         }
     }
@@ -83,7 +79,7 @@ final class GameClient {
             
             guard let data  = data  else {return}
             guard let image = UIImage(data: data) else {return}
-            
+    
             completion(image)
         }.resume()
     }

@@ -114,7 +114,9 @@ extension GameListViewController: GameListViewModelDelegate {
         gameListTableView.reloadData()
         indicator.stopAnimating()
         self.gameListTableView.refreshControl?.endRefreshing()
-
+    }
+    func gamesFailed() {
+        presentAlert(title: "Hata", message: "Oyunlar yüklenemedi")
     }
 }
 
@@ -157,19 +159,12 @@ extension GameListViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 2
     }
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerValues[row]
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       // print(pickerValues[row])
-    }
-    
-    
+
 }
 

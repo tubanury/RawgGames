@@ -9,11 +9,11 @@ import Foundation
 
 
 // MARK: - GameModel
-struct GameModel: Codable {
+struct GameModel: Decodable {
     let id: Int
     let slug, name, released: String
     let tba: Bool
-    let backgroundImage: String
+    let backgroundImage: String?
     let rating: Double
     let ratingTop: Int
     let ratings: [Rating]
