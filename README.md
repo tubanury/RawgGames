@@ -1,9 +1,11 @@
 # RAWG GAMES
 <br />
 <p align="center">
-  <a href="https://github.com/alexanderritik/Best-README-Template">
-    <img src="logo.jpeg" alt="Logo" width="80" height="80">
-  </a>
+  
+  
+
+  https://user-images.githubusercontent.com/13523858/208307051-0c05faae-4def-4c90-bbd5-6649145e6e30.mp4
+
   <p align="center">
     This is an iOS app that you can use to browse games and find detailed information about them. The data is from <a href="https://rawg.io/">Rawg API</a>.
   </p>
